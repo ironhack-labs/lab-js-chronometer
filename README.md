@@ -39,7 +39,7 @@ This LAB is equipped with unit tests to provide automated feedback on your lab p
 Please, open your terminal, change directories into the root of the lab, and run `npm install` to install the test runner. Next, run the `npm run test:watch` command to run automated tests.  
 
 ```shell
-$ cd lab-javascript-chronometer
+$ cd lab-js-chronometer
 $ npm install
 $ npm run test:watch
 ```
