@@ -29,7 +29,7 @@ describe('Chronometer class', () => {
 
     it('should receive 1 argument (printTimeCallback)', () => {
       expect(chronometer.start.length).toEqual(1);
-    });    
+    });
 
     it('should increment by 1 the currentTime property on every 1 second interval', () => {
       chronometer.start();
@@ -58,7 +58,7 @@ describe('Chronometer class', () => {
 
     it('should not receive any arguments', () => {
       expect(chronometer.getMinutes.length).toEqual(0);
-    });        
+    });
 
     it('should return a number', () => {
       chronometer.currentTime = 65;
@@ -92,7 +92,7 @@ describe('Chronometer class', () => {
 
     it('should not receive any arguments', () => {
       expect(chronometer.getSeconds.length).toEqual(0);
-    });    
+    });
 
     it('should return a number', () => {
       chronometer.currentTime = 3;
@@ -122,7 +122,7 @@ describe('Chronometer class', () => {
 
     it('should receive 1 argument (value)', () => {
       expect(chronometer.computeTwoDigitNumber.length).toEqual(1);
-    });     
+    });
 
     it('should return a string', () => {
       expect(typeof chronometer.computeTwoDigitNumber(7)).toEqual('string');
@@ -156,7 +156,7 @@ describe('Chronometer class', () => {
 
     it('should not receive any arguments', () => {
       expect(chronometer.stop.length).toEqual(0);
-    });        
+    });
 
     it('should call the clearInterval', () => {
       spyOn(window, 'clearInterval');
@@ -181,7 +181,7 @@ describe('Chronometer class', () => {
 
     it('should not receive any arguments', () => {
       expect(chronometer.reset.length).toEqual(0);
-    });       
+    });
 
     it('should reset the value of the "currentTime" property to 0', () => {
       chronometer.currentTime = 5;
@@ -190,43 +190,43 @@ describe('Chronometer class', () => {
     });
   });
 
-  describe('"split" method', () => {
-    it('should be declared', () => {
-      expect(typeof chronometer.split).toEqual('function');
-    });
+  // describe('"split" method', () => {
+  //   it('should be declared', () => {
+  //     expect(typeof chronometer.split).toEqual('function');
+  //   });
 
-    it('should not receive any arguments', () => {
-      expect(chronometer.split.length).toEqual(0);
-    });           
+  //   it('should not receive any arguments', () => {
+  //     expect(chronometer.split.length).toEqual(0);
+  //   });           
 
-    it('should return valid format with minutes and seconds', () => {
-      chronometer.currentTime = 5;
-      expect(chronometer.split()).toEqual(`00:05`);
-      chronometer.currentTime = 17;
-      expect(chronometer.split()).toEqual(`00:17`);
-      chronometer.currentTime = 60;
-      expect(chronometer.split()).toEqual(`01:00`);
-      chronometer.currentTime = 135;
-      expect(chronometer.split()).toEqual(`02:15`);
-      chronometer.currentTime = 135;
-      expect(chronometer.split()).toEqual(`02:15`);
-      chronometer.currentTime = 800;
-      expect(chronometer.split()).toEqual(`13:20`);
-    });
+  //   it('should return valid format with minutes and seconds', () => {
+  //     chronometer.currentTime = 5;
+  //     expect(chronometer.split()).toEqual(`00:05`);
+  //     chronometer.currentTime = 17;
+  //     expect(chronometer.split()).toEqual(`00:17`);
+  //     chronometer.currentTime = 60;
+  //     expect(chronometer.split()).toEqual(`01:00`);
+  //     chronometer.currentTime = 135;
+  //     expect(chronometer.split()).toEqual(`02:15`);
+  //     chronometer.currentTime = 135;
+  //     expect(chronometer.split()).toEqual(`02:15`);
+  //     chronometer.currentTime = 800;
+  //     expect(chronometer.split()).toEqual(`13:20`);
+  //   });
 
-    // If you decide to work on the bonus iteration,
-    // comment the previous test and uncomment the following
-    // it('should return valid format with minutes, seconds and milliseconds', () => {
-    //   const minNum = chronometer.getMinutes();
-    //   const secNum = chronometer.getSeconds();
-    //   const milliNum = chronometer.getMilliseconds();
+  // If you decide to work on the bonus iteration,
+  // comment the previous test and uncomment the following
+  it('should return valid format with minutes, seconds and milliseconds', () => {
+    const minNum = chronometer.getMinutes();
+    const secNum = chronometer.getSeconds();
+    const milliNum = chronometer.getMilliseconds();
 
-    //   const minStr = chronometer.computeTwoDigitNumber(minNum);
-    //   const secStr = chronometer.computeTwoDigitNumber(secNum);
-    //   const milliStr = chronometer.computeTwoDigitNumber(milliNum);
+    const minStr = chronometer.computeTwoDigitNumber(minNum);
+    const secStr = chronometer.computeTwoDigitNumber(secNum);
+    const milliStr = chronometer.computeTwoDigitNumber(milliNum);
 
-    //   expect(chronometer.split()).toEqual(`${minStr}:${secStr}:${milliStr}`);
-    // });
-
+    expect(chronometer.split()).toEqual(`${minStr}:${secStr}:${milliStr}`);
   });
+
 });
+// });
