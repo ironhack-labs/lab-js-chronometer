@@ -215,19 +215,19 @@ describe('Chronometer class', () => {
     });
   });
     // If you decide to work on the bonus iteration,
-    // comment the previous test and uncomment the following
-    describe('"split2" method', () => {
-      it('should return valid format with minutes, seconds and milliseconds', () => {
-        const minNum = chronometer.getMinutes();
-        const secNum = chronometer.getSeconds();
-        const milliNum = chronometer.getMilliseconds();
- 
-        const minStr = chronometer.computeTwoDigitNumber(minNum);
-        const secStr = chronometer.computeTwoDigitNumber(secNum);
-        const milliStr = chronometer.computeTwoDigitNumber(milliNum);
- 
-        expect(chronometer.split2()).toEqual(`${minStr}:${secStr}:${milliStr}`);
-      });
-
-  });
+    // uncomment
+    //describe('"split2" method', () => {
+    //  it('should return valid format with minutes, seconds and milliseconds', () => {
+    //    const minNum = chronometer.getMinutes();
+    //    const secNum = chronometer.getSeconds();
+    //    const milliNum = chronometer.getMilliseconds();
+ //
+    //    const minStr = chronometer.computeTwoDigitNumber(minNum);
+    //    const secStr = chronometer.computeTwoDigitNumber(secNum);
+    //    const milliStr = chronometer.computeTwoDigitNumber(milliNum);
+ //
+    //    expect(chronometer.split2()).toEqual(`${minStr}:${secStr}:${milliStr}`);
+    //  });
+//
+  //});
 });
