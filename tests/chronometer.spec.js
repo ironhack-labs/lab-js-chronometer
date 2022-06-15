@@ -213,20 +213,21 @@ describe('Chronometer class', () => {
       chronometer.currentTime = 800;
       expect(chronometer.split()).toEqual(`13:20`);
     });
-
+  });
     // If you decide to work on the bonus iteration,
     // comment the previous test and uncomment the following
-     it('should return valid format with minutes, seconds and milliseconds', () => {
-       const minNum = chronometer.getMinutes();
-       const secNum = chronometer.getSeconds();
-       const milliNum = chronometer.getMilliseconds();
-
-       const minStr = chronometer.computeTwoDigitNumber(minNum);
-       const secStr = chronometer.computeTwoDigitNumber(secNum);
-       const milliStr = chronometer.computeTwoDigitNumber(milliNum);
-
-       expect(chronometer.split()).toEqual(`${minStr}:${secStr}:${milliStr}`);
-     });
+    describe('"split2" method', () => {
+      it('should return valid format with minutes, seconds and milliseconds', () => {
+        const minNum = chronometer.getMinutes();
+        const secNum = chronometer.getSeconds();
+        const milliNum = chronometer.getMilliseconds();
+ 
+        const minStr = chronometer.computeTwoDigitNumber(minNum);
+        const secStr = chronometer.computeTwoDigitNumber(secNum);
+        const milliStr = chronometer.computeTwoDigitNumber(milliNum);
+ 
+        expect(chronometer.split2()).toEqual(`${minStr}:${secStr}:${milliStr}`);
+      });
 
   });
 });

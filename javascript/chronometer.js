@@ -27,7 +27,6 @@ class Chronometer {
   }
 
   getMilliseconds() {
-    //console.log((this.currentTime*1000*60)/10000);
     return (this.currentTime*1000*60)/10000;
   }
   
@@ -48,6 +47,12 @@ class Chronometer {
   }
 //BONUS - Iteration 8 & 9: Milliseconds
   split() {
+    // ... your code goes here
+    let formatMin = this.computeTwoDigitNumber(this.getMinutes());
+    let formatSec = this.computeTwoDigitNumber(this.getSeconds());
+    return `${formatMin}:${formatSec}`;
+  }
+  split2() {
     // ... your code goes here
     let formatMin = this.computeTwoDigitNumber(this.getMinutes());
     let formatSec = this.computeTwoDigitNumber(this.getSeconds());
