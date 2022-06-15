@@ -174,21 +174,21 @@ describe('Chronometer class', () => {
     });
   });
 
-  describe('"reset" method', () => {
-    it('should be declared', () => {
-      expect(typeof chronometer.reset).toEqual('function');
-    });
+ describe('"reset" method', () => {
+   it('should be declared', () => {
+     expect(typeof chronometer.reset).toEqual('function');
+   });
 
-    it('should not receive any arguments', () => {
-      expect(chronometer.reset.length).toEqual(0);
-    });       
+   it('should not receive any arguments', () => {
+     expect(chronometer.reset.length).toEqual(0);
+   });       
 
-    it('should reset the value of the "currentTime" property to 0', () => {
-      chronometer.currentTime = 5;
-      chronometer.reset();
-      expect(chronometer.currentTime).toEqual(0);
-    });
-  });
+   it('should reset the value of the "currentTime" property to 0', () => {
+     chronometer.currentTime = 5;
+     chronometer.reset();
+     expect(chronometer.currentTime).toEqual(0);
+   });
+ });
 
   describe('"split" method', () => {
     it('should be declared', () => {
@@ -216,17 +216,17 @@ describe('Chronometer class', () => {
 
     // If you decide to work on the bonus iteration,
     // comment the previous test and uncomment the following
-    // it('should return valid format with minutes, seconds and milliseconds', () => {
-    //   const minNum = chronometer.getMinutes();
-    //   const secNum = chronometer.getSeconds();
-    //   const milliNum = chronometer.getMilliseconds();
+     it('should return valid format with minutes, seconds and milliseconds', () => {
+       const minNum = chronometer.getMinutes();
+       const secNum = chronometer.getSeconds();
+       const milliNum = chronometer.getMilliseconds();
 
-    //   const minStr = chronometer.computeTwoDigitNumber(minNum);
-    //   const secStr = chronometer.computeTwoDigitNumber(secNum);
-    //   const milliStr = chronometer.computeTwoDigitNumber(milliNum);
+       const minStr = chronometer.computeTwoDigitNumber(minNum);
+       const secStr = chronometer.computeTwoDigitNumber(secNum);
+       const milliStr = chronometer.computeTwoDigitNumber(milliNum);
 
-    //   expect(chronometer.split()).toEqual(`${minStr}:${secStr}:${milliStr}`);
-    // });
+       expect(chronometer.split()).toEqual(`${minStr}:${secStr}:${milliStr}`);
+     });
 
   });
 });
