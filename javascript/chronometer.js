@@ -45,13 +45,15 @@ class Chronometer {
     // ... your code goes here
     this.currentTime = 0;
   }
-//BONUS - Iteration 8 & 9: Milliseconds
+
   split() {
     // ... your code goes here
     let formatMin = this.computeTwoDigitNumber(this.getMinutes());
     let formatSec = this.computeTwoDigitNumber(this.getSeconds());
     return `${formatMin}:${formatSec}`;
   }
+  
+  //BONUS - Iteration 9: Milliseconds
   split2() {
     // ... your code goes here
     let formatMin = this.computeTwoDigitNumber(this.getMinutes());
