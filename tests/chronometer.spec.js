@@ -32,9 +32,11 @@ describe('Chronometer class', () => {
     });    
 
     it('should increment by 1 the currentTime property on every 1 second interval', () => {
-      chronometer.start();
+      const printTimeCallback = jest.fn();
+      chronometer.start(printTimeCallback);
       jest.advanceTimersByTime(1000);
       expect(chronometer.currentTime).toEqual(1);
+      expect(printTimeCallback.mock.calls.length).toEqual(1);
     });
 
     it('should invoke the passed argument (printTimeCallback) every 1 second', () => {
@@ -45,9 +47,11 @@ describe('Chronometer class', () => {
     });
 
     it('should increment the currentTime property to 3 after 3 seconds', () => {
-      chronometer.start();
+      const printTimeCallback = jest.fn();
+      chronometer.start(printTimeCallback);
       jest.advanceTimersByTime(3000);
       expect(chronometer.currentTime).toEqual(3);
+      expect(printTimeCallback.mock.calls.length).toEqual(3);
     });
   });
 
