@@ -8,20 +8,16 @@ class Chronometer {
   start(printTimeCallback) {
       // ... your code goes here
       this.intervalId = setInterval(() => {this.currentTime++
-          if (printTimeCallback) {
+          if (arguments.length && typeof printTimeCallback === 'function') {
             printTimeCallback()
           }
     }, 1000);
   }
 
   getMinutes() {
-    if (this.currentTime === 0) {
-      return 0
-    } else if (this.currentTime >= 60) {
      return Math.floor (this.currentTime / 60)
-    
     }
-  }
+  
 
   getSeconds() {
     // ... your code goes here
@@ -31,8 +27,9 @@ class Chronometer {
   computeTwoDigitNumber(value) {
     // ... your code goes here
     if (value > 9) {
-      return value.toString()
-    } else return '0' + value
+      return value.toString();
+    } 
+    return `0${value}`;
   }
 
   stop() {
@@ -47,7 +44,11 @@ class Chronometer {
   }
 
   split() {
-    
+    let min = this.getMinutes();
+    let sec = this.getSeconds();
+    min = this.computeTwoDigitNumber (min);
+    sec = this.computeTwoDigitNumber (sec);
+    return `${min}:${sec}`;
  }
 }
 
