@@ -1,4 +1,4 @@
-const chronometer = new Chronometer();
+cconst chronometer = new Chronometer();
 
 const btnLeft = document.getElementById('btnLeft');
 const btnRight = document.getElementById('btnRight');
@@ -28,8 +28,8 @@ function printSeconds() {
 }
 
 function printMilliseconds() {
-  milUni.innerHTML = chronometer.computeTwoDigitNumber(chronometer.getMilliseconds())[1];
-  milDec.innerHTML = chronometer.computeTwoDigitNumber(chronometer.getMilliseconds())[0];
+  milUni.innerHTML = chronometer.computeTwoDigitNumber(chronometer.getCentiseconds())[1];
+  milDec.innerHTML = chronometer.computeTwoDigitNumber(chronometer.getCentiseconds())[0];
 }
 
 function printSplit() {
