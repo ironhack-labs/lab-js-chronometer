@@ -56,12 +56,12 @@ class Chronometer {
 
   stop() {
     clearInterval(this.intervalId);
-    clearInterval(this.millisecIntervalId);
+    // clearInterval(this.millisecIntervalId);
   }
 
   reset() {
     this.currentTime = 0;
-    this.currentMilliseconds = 0;
+    // this.currentMilliseconds = 0;
   }
 
   split() {
