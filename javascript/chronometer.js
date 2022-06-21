@@ -10,15 +10,19 @@ class Chronometer {
       if (typeof printTimeCallback === 'function') {
         printTimeCallback();
       }
-    }, 1000);
+    }, 10);
   }
 
   getMinutes() {
-    return Math.floor(this.currentTime / 60);
+    return Math.floor(this.currentTime / (60 * 100));
   }
 
   getSeconds() {
-    return Math.floor(this.currentTime % 60);
+    return Math.floor((this.currentTime % (60 * 100)) / 100);
+  }
+
+  getMilliseconds() {
+    return +`${this.currentTime}`.slice(-2);
   }
 
   computeTwoDigitNumber(value) {
@@ -37,7 +41,9 @@ class Chronometer {
     return (
       this.computeTwoDigitNumber(this.getMinutes()) +
       ':' +
-      this.computeTwoDigitNumber(this.getSeconds())
+      this.computeTwoDigitNumber(this.getSeconds()) +
+      ':' +
+      this.computeTwoDigitNumber(this.getMilliseconds())
     );
   }
 }
