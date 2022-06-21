@@ -10,15 +10,19 @@ class Chronometer {
       if (typeof printTimeCallback == 'function') {
       printTimeCallback(); 
       }
-    }, 1000);
+    }, 10);
   }
 
   getMinutes() {
-    return Math.floor(this.currentTime/60);
+    return Math.floor(this.currentTime/100/60);
   }
 
   getSeconds() {
-    return this.currentTime%60;
+    return this.currentTime/100%60;
+  }
+
+  getMilliseconds() {
+    return this.currentTime%100;
   }
 
   computeTwoDigitNumber(value) {
