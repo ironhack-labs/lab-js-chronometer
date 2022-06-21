@@ -29,25 +29,25 @@ describe('Chronometer class', () => {
 
     it('should receive 1 argument (printTimeCallback)', () => {
       expect(chronometer.start.length).toEqual(1);
-    });    
+    });
 
     it('should increment by 1 the currentTime property on every 1 second interval', () => {
       chronometer.start();
       jest.advanceTimersByTime(1000);
-      expect(chronometer.currentTime).toEqual(1);
+      expect(chronometer.currentTime).toEqual(100);
     });
 
     it('should invoke the passed argument (printTimeCallback) every 1 second', () => {
       const printTimeCallback = jest.fn();
       chronometer.start(printTimeCallback);
       jest.advanceTimersByTime(2000);
-      expect(printTimeCallback.mock.calls.length).toEqual(2);
+      expect(printTimeCallback.mock.calls.length).toEqual(200);
     });
 
     it('should increment the currentTime property to 3 after 3 seconds', () => {
       chronometer.start();
       jest.advanceTimersByTime(3000);
-      expect(chronometer.currentTime).toEqual(3);
+      expect(chronometer.currentTime).toEqual(300);
     });
   });
 
@@ -58,7 +58,7 @@ describe('Chronometer class', () => {
 
     it('should not receive any arguments', () => {
       expect(chronometer.getMinutes.length).toEqual(0);
-    });        
+    });
 
     it('should return a number', () => {
       chronometer.currentTime = 65;
@@ -71,7 +71,7 @@ describe('Chronometer class', () => {
     });
 
     it('should return the number of entire minutes passed', () => {
-      chronometer.currentTime = 65;
+      chronometer.currentTime = 6500;
       expect(chronometer.getMinutes()).toEqual(1);
     });
 
@@ -80,7 +80,7 @@ describe('Chronometer class', () => {
     });
 
     it('should return the number of minutes passed even after a very long time', () => {
-      chronometer.currentTime = 50210;
+      chronometer.currentTime = 5021000;
       expect(chronometer.getMinutes()).toEqual(836);
     });
   });
@@ -92,7 +92,7 @@ describe('Chronometer class', () => {
 
     it('should not receive any arguments', () => {
       expect(chronometer.getSeconds.length).toEqual(0);
-    });    
+    });
 
     it('should return a number', () => {
       chronometer.currentTime = 3;
@@ -105,13 +105,38 @@ describe('Chronometer class', () => {
     });
 
     it('should return the seconds of the currentTime', () => {
-      chronometer.currentTime = 15;
+      chronometer.currentTime = 1500;
       expect(chronometer.getSeconds()).toEqual(15);
     });
 
     it('should return the seconds portion of the currentTime that remains after removing the minutes', () => {
-      chronometer.currentTime = 115;
+      chronometer.currentTime = 11500;
       expect(chronometer.getSeconds()).toEqual(55);
+    });
+  });
+
+  describe('"getMilliseconds" method', () => {
+    it('should be declared', () => {
+      expect(typeof chronometer.getMilliseconds).toEqual('function');
+    });
+
+    it('should not receive any arguments', () => {
+      expect(chronometer.getSeconds.length).toEqual(0);
+    });
+
+    it('should return a number', () => {
+      chronometer.currentTime = 3;
+      expect(typeof chronometer.getMilliseconds(0)).toEqual('number');
+    });
+
+    it("should return 0 when the currentTime counting haven't started", () => {
+      chronometer.currentTime = 0;
+      expect(chronometer.getMilliseconds()).toEqual(0);
+    });
+
+    it('should return the milliseconds portion of the currentTime that remains after removing the minutes', () => {
+      chronometer.currentTime = 11555;
+      expect(chronometer.getMilliseconds()).toEqual(55);
     });
   });
 
@@ -122,7 +147,7 @@ describe('Chronometer class', () => {
 
     it('should receive 1 argument (value)', () => {
       expect(chronometer.computeTwoDigitNumber.length).toEqual(1);
-    });     
+    });
 
     it('should return a string', () => {
       expect(typeof chronometer.computeTwoDigitNumber(7)).toEqual('string');
@@ -156,7 +181,7 @@ describe('Chronometer class', () => {
 
     it('should not receive any arguments', () => {
       expect(chronometer.stop.length).toEqual(0);
-    });        
+    });
 
     it('should call the clearInterval', () => {
       spyOn(window, 'clearInterval');
@@ -167,10 +192,10 @@ describe('Chronometer class', () => {
     it('should stop a previously started chronometer', () => {
       chronometer.start();
       jest.advanceTimersByTime(1000);
-      expect(chronometer.currentTime).toEqual(1);
+      expect(chronometer.currentTime).toEqual(100);
       chronometer.stop();
       jest.advanceTimersByTime(2000);
-      expect(chronometer.currentTime).toEqual(1);
+      expect(chronometer.currentTime).toEqual(100);
     });
   });
 
@@ -181,7 +206,7 @@ describe('Chronometer class', () => {
 
     it('should not receive any arguments', () => {
       expect(chronometer.reset.length).toEqual(0);
-    });       
+    });
 
     it('should reset the value of the "currentTime" property to 0', () => {
       chronometer.currentTime = 5;
@@ -197,21 +222,27 @@ describe('Chronometer class', () => {
 
     it('should not receive any arguments', () => {
       expect(chronometer.split.length).toEqual(0);
-    });           
+    });
 
-    it('should return valid format with minutes and seconds', () => {
-      chronometer.currentTime = 5;
-      expect(chronometer.split()).toEqual(`00:05`);
-      chronometer.currentTime = 17;
-      expect(chronometer.split()).toEqual(`00:17`);
-      chronometer.currentTime = 60;
-      expect(chronometer.split()).toEqual(`01:00`);
-      chronometer.currentTime = 135;
-      expect(chronometer.split()).toEqual(`02:15`);
-      chronometer.currentTime = 135;
-      expect(chronometer.split()).toEqual(`02:15`);
-      chronometer.currentTime = 800;
-      expect(chronometer.split()).toEqual(`13:20`);
+    it('should return valid format with minutes and seconds and miliseconds', () => {
+      chronometer.currentTime = 500;
+      expect(chronometer.split()).toEqual(`00:05:00`);
+      chronometer.currentTime = 1700;
+      expect(chronometer.split()).toEqual(`00:17:00`);
+      chronometer.currentTime = 6000;
+      expect(chronometer.split()).toEqual(`01:00:00`);
+      chronometer.currentTime = 13500;
+      expect(chronometer.split()).toEqual(`02:15:00`);
+      chronometer.currentTime = 13500;
+      expect(chronometer.split()).toEqual(`02:15:00`);
+      chronometer.currentTime = 80000;
+      expect(chronometer.split()).toEqual(`13:20:00`);
+      chronometer.currentTime = 80020;
+      expect(chronometer.split()).toEqual(`13:20:20`);
+      chronometer.currentTime = 80001;
+      expect(chronometer.split()).toEqual(`13:20:01`);
+      chronometer.currentTime = 80099;
+      expect(chronometer.split()).toEqual(`13:20:99`);
     });
 
     // If you decide to work on the bonus iteration,
@@ -227,6 +258,5 @@ describe('Chronometer class', () => {
 
     //   expect(chronometer.split()).toEqual(`${minStr}:${secStr}:${milliStr}`);
     // });
-
   });
 });
