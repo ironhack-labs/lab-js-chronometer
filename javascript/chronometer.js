@@ -18,7 +18,7 @@ class Chronometer {
   }
 
   getSeconds() {
-    return this.currentTime/100%60;
+    return Math.floor(this.currentTime/100%60);
   }
 
   getMilliseconds() {
@@ -26,7 +26,7 @@ class Chronometer {
   }
 
   computeTwoDigitNumber(value) {
-    return value.toString().padStart(2, '0')
+    return (value).toString().padStart(2, '0')
   }
 
   stop() {
@@ -40,9 +40,10 @@ class Chronometer {
   split() {
     let minutes = this.getMinutes();
     let seconds = this.getSeconds();
+    let milliseconds = this.getMilliseconds();
     let minutesDigit = this.computeTwoDigitNumber(minutes);
     let secondsDigit = this.computeTwoDigitNumber(seconds);
-    return minutesDigit + ":" + secondsDigit;
+    return minutesDigit + ":" + secondsDigit + ":" + milliseconds;
   }
 }
 
