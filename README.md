@@ -2,6 +2,8 @@
 
 # LAB | JS Chronometer
 
+![giphy (1)](https://user-images.githubusercontent.com/76580/167427065-a674fb55-44ea-448a-a7ef-940b45eeb9df.gif)
+
 ## Introduction
 
 In this lab, we are going to create a [chronometer](https://www.dictionary.com/browse/chronometer). Chronometers are very commonly used in sports - car racing, athletics, etc. We will use classes to organize and abstract our code and the JavaScript timers to implement the chronometer functionality. A perfect opportunity to sharpen our OOP skills and practice working with asynchronous JavaScript.
