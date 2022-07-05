@@ -79,6 +79,7 @@ To start, **open the `index.html` page in the browser**. You should see the *sto
 <details>
   <summary> Click here to see the image</summary>
 
+
 <br>
 
 ![](https://education-team-2020.s3-eu-west-1.amazonaws.com/web-dev/labs/chronometer.png)
@@ -125,7 +126,7 @@ Let's implement the `Chronometer` class following the below requirements:
 
   -  `currentTime`, with the initial value set to `0`.
 
-  - `intervalId`, with the initial value set to `null`.
+  -  `intervalId`, with the initial value set to `null`.
 
 
 
@@ -313,6 +314,7 @@ The `split` method should take no arguments, and it should return a string where
 <details>
   <summary> Click here to see the image </summary>
 
+
 <br>
 
 ![](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_a5c9687f25bd710b2e7658ee6d997174.png)
@@ -325,28 +327,70 @@ The `split` method should take no arguments, and it should return a string where
 
 
 
-### BONUS - Iteration 9: Milliseconds
+### BONUS - Iteration 9: Centiseconds
 
-Our chronometer is now fully functional, and we can use it to measure how much time we spend on each exercise. Now, what if we want to calculate our time in a race? We would need to be more accurate with our chronometer. How can we be more accurate? By adding milliseconds!
+Our chronometer is now fully functional, and we can use it to measure how much time we spend on each exercise. Now, what if we want to calculate our time in a race? We would need to be more accurate with our chronometer. How can we be more accurate? By adding the hundredths of a second ([centiseconds](https://en.wiktionary.org/wiki/centisecond))!
 
 
-Finally, in JavaScript, we will have to add all the logic to show the milliseconds in the clock. You will also have to add these milliseconds to the split counter.
+Finally, in JavaScript, we will have to add all the logic to show the centiseconds on the stopwatch. You will also have to show these centiseconds in each *Splits* snapshot.
 
 ![](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_82e9d1fd5976a3f98bb1382f2385f6a1.png)
 
 Your goal is to create the JavaScript logic to:
 
-- Be able to count the milliseconds.
+- Be able to count the centiseconds.
 
-- Show the milliseconds going forward.
+- Show the centiseconds going forward. 
 
-- Show the milliseconds when you capture a split time.
+- Show the centiseconds when you capture a split time.
 
-- Clear the milliseconds when the Reset button is clicked.
+- Clear the centiseconds shown on the stopwatch when the Reset button is clicked.
 
-  
 
-**Note:** This slightly more complicated iteration will require you to modify the *timer interval* and update the calculation logic for *minutes*, *seconds*, and *milliseconds*. Additionally, Implementing the milliseconds feature will result in some tests (that you have previously passed) breaking.
+
+**Note:** This slightly more complicated iteration will require you to modify the *timer interval* and update the calculation logic for *minutes*, *seconds*, and *centiseconds*. Use the following conversion as a reference:
+
+
+
+> 1 centisecond = 10 milliseconds
+>
+> 1 second = 100 centiseconds = 1000 milliseconds
+
+
+
+
+
+#### Tests Setup - Bonus Iteration 9
+
+You'll use different tests and a different working file for this iteration. To do so, change your HTML files:
+
+1. In `SpecRunner.html`, *comment out* the two script tags in use and *uncomment* the two for the bonus iteration, like this:
+
+   ```html
+       <!--  Iterations 1 - 8 -->
+       <!-- <script src="javascript/chronometer.js"></script> -->
+       <!-- <script src="tests/chronometer.spec.js"></script> -->
+   
+       <!-- Bonus Iteration 9: Centiseconds -->
+       <script src="javascript/chronometer-centiseconds.js"></script>
+       <script src="tests/chronometer-centiseconds.spec.js"></script>
+   ```
+
+   
+
+2. In `index.html`, *comment out* the script tag loading the `chronometer.js` file, and *uncomment* the `chronometer-centiseconds.js` one, like this:
+
+   ```html
+     <!--  Iterations 1 - 8 -->
+     <!-- <script src="javascript/chronometer.js"></script> -->
+   
+     <!-- Bonus Iteration 9: Centiseconds -->
+     <script src="javascript/chronometer-centiseconds.js"></script>
+   ```
+
+   
+
+
 
 
 
