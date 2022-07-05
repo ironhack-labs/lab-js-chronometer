@@ -1,10 +1,7 @@
-const Chronometer = require('../javascript/chronometer');
-
 describe('Chronometer class', () => {
   let chronometer;
 
   beforeEach(() => {
-    jest.useFakeTimers();
     chronometer = new Chronometer();
   });
 
@@ -23,6 +20,15 @@ describe('Chronometer class', () => {
   });
 
   describe('"start" method', () => {
+    beforeEach(() => {
+      jasmine.clock().uninstall();
+      jasmine.clock().install();
+    });
+
+    afterEach(() => {
+      jasmine.clock().uninstall();
+    });
+
     it('should be declared', () => {
       expect(typeof chronometer.start).toEqual('function');
     });
@@ -33,20 +39,20 @@ describe('Chronometer class', () => {
 
     it('should increment by 1 the currentTime property on every 1 second interval', () => {
       chronometer.start();
-      jest.advanceTimersByTime(1000);
+      jasmine.clock().tick(1000);
       expect(chronometer.currentTime).toEqual(1);
     });
 
     it('should invoke the passed argument (printTimeCallback) every 1 second', () => {
-      const printTimeCallback = jest.fn();
+      const printTimeCallback = jasmine.createSpy('printTimeCallback');
       chronometer.start(printTimeCallback);
-      jest.advanceTimersByTime(2000);
-      expect(printTimeCallback.mock.calls.length).toEqual(2);
+      jasmine.clock().tick(2000);
+      expect(printTimeCallback).toHaveBeenCalledTimes(2);
     });
 
     it('should increment the currentTime property to 3 after 3 seconds', () => {
-      chronometer.start();
-      jest.advanceTimersByTime(3000);
+      chronometer.start();      
+      jasmine.clock().tick(3000);
       expect(chronometer.currentTime).toEqual(3);
     });
   });
@@ -147,7 +153,12 @@ describe('Chronometer class', () => {
 
   describe('"stop" method', () => {
     beforeEach(() => {
-      jest.useFakeTimers();
+      jasmine.clock().uninstall();
+      jasmine.clock().install();
+    });
+
+    afterEach(() => {
+      jasmine.clock().uninstall();
     });
 
     it('should be declared', () => {
@@ -166,10 +177,12 @@ describe('Chronometer class', () => {
 
     it('should stop a previously started chronometer', () => {
       chronometer.start();
-      jest.advanceTimersByTime(1000);
+
+      jasmine.clock().tick(1000);
       expect(chronometer.currentTime).toEqual(1);
       chronometer.stop();
-      jest.advanceTimersByTime(2000);
+      
+      jasmine.clock().tick(2000);      
       expect(chronometer.currentTime).toEqual(1);
     });
   });
@@ -199,7 +212,7 @@ describe('Chronometer class', () => {
       expect(chronometer.split.length).toEqual(0);
     });           
 
-    it('should return valid format with minutes and seconds', () => {
+    it('should return valid format with minutes and seconds "mm:ss"', () => {
       chronometer.currentTime = 5;
       expect(chronometer.split()).toEqual(`00:05`);
       chronometer.currentTime = 17;
@@ -213,20 +226,6 @@ describe('Chronometer class', () => {
       chronometer.currentTime = 800;
       expect(chronometer.split()).toEqual(`13:20`);
     });
-
-    // If you decide to work on the bonus iteration,
-    // comment the previous test and uncomment the following
-    // it('should return valid format with minutes, seconds and milliseconds', () => {
-    //   const minNum = chronometer.getMinutes();
-    //   const secNum = chronometer.getSeconds();
-    //   const milliNum = chronometer.getMilliseconds();
-
-    //   const minStr = chronometer.computeTwoDigitNumber(minNum);
-    //   const secStr = chronometer.computeTwoDigitNumber(secNum);
-    //   const milliStr = chronometer.computeTwoDigitNumber(milliNum);
-
-    //   expect(chronometer.split()).toEqual(`${minStr}:${secStr}:${milliStr}`);
-    // });
 
   });
 });
