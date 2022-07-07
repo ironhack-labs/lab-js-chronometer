@@ -34,25 +34,23 @@ $ git push origin master
 
 
 
-## Tests, tests, tests!
 
-This LAB is equipped with unit tests to provide automated feedback on your lab progress. You'll start by working with the tests and using them in conjunction with the iteration instructions.
 
-Please, open your terminal, change directories into the root of the lab, and run `npm install` to install the test runner. Next, run the `npm run test:watch` command to run automated tests.  
+## Test Your Code
 
-```shell
-$ cd lab-js-chronometer
-$ npm install
-$ npm run test:watch
-```
+This LAB is equipped with unit tests to provide automated feedback on your lab progress. In case you want to check the tests, they are in the `tests/chronometer.spec.js` file.
 
-<br>
 
-Open the resulting `lab-solution.html` file with the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) VSCode extension to see the test results.
 
-**Note:** The testing environment and the `lab-solution.html` page don’t allow printing the _console logs_ in the browser.  To see the console.log outputs you write in any JavaScript file, open the `index.html` file using the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) VSCode extension.
+To run the tests and your JavaScript code, open the `SpecRunner.html` file using the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) VSCode extension.
+
+
+
+To see the outputs of the `console.log` in your JavaScript code, open the [Console in the Developer Tools](https://developer.chrome.com/docs/devtools/open/#console).
 
 <br>
+
+
 
 
 
@@ -89,7 +87,11 @@ To start, **open the `index.html` page in the browser**. You should see the *sto
 
 The *stopwatch* markup, styles, and DOM functionality are located in the files `styles/style.css`, `index.html`, and `src/index.js`. These files already include all the needed code, and **you should not modify them**.
 
+
+
 <br>
+
+
 
 #### The Chronometer
 
@@ -339,16 +341,12 @@ Finally, in JavaScript, we will have to add all the logic to show the centisecon
 Your goal is to create the JavaScript logic to:
 
 - Be able to count the centiseconds.
-
-- Show the centiseconds going forward. 
-
-- Show the centiseconds when you capture a split time.
-
-- Clear the centiseconds shown on the stopwatch when the Reset button is clicked.
+- Capture the centiseconds when you capture a split time.
+- Reset the current time to 0.
 
 
 
-**Note:** This slightly more complicated iteration will require you to modify the *timer interval* and update the calculation logic for *minutes*, *seconds*, and *centiseconds*. Use the following conversion as a reference:
+**Note:** This slightly more complicated iteration will require you to modify the *timer interval* and update the calculation logic for *minutes*, *seconds*, and *centiseconds*. Use the following conversion guideline as a reference:
 
 
 
@@ -356,11 +354,11 @@ Your goal is to create the JavaScript logic to:
 >
 > 1 second = 100 centiseconds = 1000 milliseconds
 
+<br>
 
 
 
-
-#### Tests Setup - Bonus Iteration 9
+#### Tests & File Setup (Bonus - Iteration 9: Centiseconds)
 
 You'll use different tests and a different working file for this iteration. To do so, change your HTML files:
 
