@@ -66,8 +66,6 @@ To check how the final version of the chronometer should work, check this **[dem
 
 ### Iteration 0: Getting Started
 
-<br>
-
 #### The Stopwatch UI
 
 To let you focus on the JavaScript portion of the exercise and on developing the chronometer functionality, we created the *stopwatch* UI for you.
