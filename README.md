@@ -87,22 +87,22 @@ To start, **open the `index.html` page in the browser**. You should see the *sto
 
 <br>
 
-The *stopwatch* markup, styles, and DOM functionality are located in the files `styles/style.css`, `index.html`, and `javascript/index.js`. These files already include all the needed code, and **you should not modify them**.
+The *stopwatch* markup, styles, and DOM functionality are located in the files `styles/style.css`, `index.html`, and `src/index.js`. These files already include all the needed code, and **you should not modify them**.
 
 <br>
 
 #### The Chronometer
 
-**You will do all your work in the `javascript/chronometer.js` file.** 
+**You will do all your work in the `src/chronometer.js` file.**
 
 The goal of the exercise is to finish implementing the `Chronometer` class and its methods. The class and the methods are already defined in the `chronometer.js` file but have no functionality.
 
 
 
-The `javascript/index.js` file depends on the methods of the `Chronometer` to display the time on the *stopwatch* and includes a `Chronometer` instance as follows: 
+The `src/index.js` file depends on the methods of the `Chronometer` to display the time on the *stopwatch* and includes a `Chronometer` instance as follows:
 
 > ```js
-> // javascript/index.js
+> // src/index.js
 > const chronometer = new Chronometer(); // instance of the Chronometer
 > 
 > // ...
@@ -368,11 +368,11 @@ You'll use different tests and a different working file for this iteration. To d
 
    ```html
        <!--  Iterations 1 - 8 -->
-       <!-- <script src="javascript/chronometer.js"></script> -->
+       <!-- <script src="src/chronometer.js"></script> -->
        <!-- <script src="tests/chronometer.spec.js"></script> -->
    
        <!-- Bonus Iteration 9: Centiseconds -->
-       <script src="javascript/chronometer-centiseconds.js"></script>
+       <script src="src/chronometer-centiseconds.js"></script>
        <script src="tests/chronometer-centiseconds.spec.js"></script>
    ```
 
@@ -382,10 +382,10 @@ You'll use different tests and a different working file for this iteration. To d
 
    ```html
      <!--  Iterations 1 - 8 -->
-     <!-- <script src="javascript/chronometer.js"></script> -->
+     <!-- <script src="src/chronometer.js"></script> -->
    
      <!-- Bonus Iteration 9: Centiseconds -->
-     <script src="javascript/chronometer-centiseconds.js"></script>
+     <script src="src/chronometer-centiseconds.js"></script>
    ```
 
    
