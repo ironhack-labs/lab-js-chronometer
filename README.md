@@ -26,7 +26,7 @@ Let's get started!
 
 ```shell
 $ git add .
-$ git commit -m "Solve lab"
+$ git commit -m "Solved lab"
 $ git push origin master
 ```
 
