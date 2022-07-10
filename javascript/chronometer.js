@@ -7,8 +7,11 @@ class Chronometer {
 
   start(printTimeCallback) {
     // ... your code goes here
-    const intervalId = setInterval(() => {
+    this.intervalId = setInterval(() => {
       this.currentTime += 1;
+      if (typeof printTimeCallback === "function") { 
+        printTimeCallback();
+      }
     }, 1000)
   }
 
@@ -26,7 +29,7 @@ class Chronometer {
 
   computeTwoDigitNumber(value) {
     // ... your code goes here
-    formatedNumber = value.toString();
+    let formatedNumber = value.toString();
     if (formatedNumber.length === 1) {
       formatedNumber = "0" + formatedNumber
     }
@@ -36,7 +39,7 @@ class Chronometer {
   stop() {
     // ... your code goes here
     clearInterval(this.intervalId);
-
+  
     // this.intervalId = clearInterval(this.intervalId)
     // this.start(this.clearInterval())
     
@@ -56,7 +59,7 @@ class Chronometer {
 
     let split = minutes+":"+seconds;
 
-    return split.toString();
+    return split;
 
   }
 }
