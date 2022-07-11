@@ -26,7 +26,7 @@ Let's get started!
 
 ```shell
 $ git add .
-$ git commit -m "Solve lab"
+$ git commit -m "Solved lab"
 $ git push origin master
 ```
 
@@ -34,25 +34,23 @@ $ git push origin master
 
 
 
-## Tests, tests, tests!
 
-This LAB is equipped with unit tests to provide automated feedback on your lab progress. You'll start by working with the tests and using them in conjunction with the iteration instructions.
 
-Please, open your terminal, change directories into the root of the lab, and run `npm install` to install the test runner. Next, run the `npm run test:watch` command to run automated tests.  
+## Test Your Code
 
-```shell
-$ cd lab-js-chronometer
-$ npm install
-$ npm run test:watch
-```
+This LAB is equipped with unit tests to provide automated feedback on your lab progress. In case you want to check the tests, they are in the `tests/chronometer.spec.js` file.
 
-<br>
 
-Open the resulting `lab-solution.html` file with the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) VSCode extension to see the test results.
 
-**Note:** The testing environment and the `lab-solution.html` page don’t allow printing the _console logs_ in the browser.  To see the console.log outputs you write in any JavaScript file, open the `index.html` file using the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) VSCode extension.
+To run the tests and your JavaScript code, open the `SpecRunner.html` file using the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) VSCode extension.
+
+
+
+To see the outputs of the `console.log` in your JavaScript code, open the [Console in the Developer Tools](https://developer.chrome.com/docs/devtools/open/#console).
 
 <br>
+
+
 
 
 
@@ -68,8 +66,6 @@ To check how the final version of the chronometer should work, check this **[dem
 
 ### Iteration 0: Getting Started
 
-<br>
-
 #### The Stopwatch UI
 
 To let you focus on the JavaScript portion of the exercise and on developing the chronometer functionality, we created the *stopwatch* UI for you.
@@ -79,6 +75,7 @@ To start, **open the `index.html` page in the browser**. You should see the *sto
 <details>
   <summary> Click here to see the image</summary>
 
+
 <br>
 
 ![](https://education-team-2020.s3-eu-west-1.amazonaws.com/web-dev/labs/chronometer.png)
@@ -86,22 +83,26 @@ To start, **open the `index.html` page in the browser**. You should see the *sto
 
 <br>
 
-The *stopwatch* markup, styles, and DOM functionality are located in the files `styles/style.css`, `index.html`, and `javascript/index.js`. These files already include all the needed code, and **you should not modify them**.
+The *stopwatch* markup, styles, and DOM functionality are located in the files `styles/style.css`, `index.html`, and `src/index.js`. These files already include all the needed code, and **you should not modify them**.
+
+
 
 <br>
 
+
+
 #### The Chronometer
 
-**You will do all your work in the `javascript/chronometer.js` file.** 
+**You will do all your work in the `src/chronometer.js` file.**
 
 The goal of the exercise is to finish implementing the `Chronometer` class and its methods. The class and the methods are already defined in the `chronometer.js` file but have no functionality.
 
 
 
-The `javascript/index.js` file depends on the methods of the `Chronometer` to display the time on the *stopwatch* and includes a `Chronometer` instance as follows: 
+The `src/index.js` file depends on the methods of the `Chronometer` to display the time on the *stopwatch* and includes a `Chronometer` instance as follows:
 
 > ```js
-> // javascript/index.js
+> // src/index.js
 > const chronometer = new Chronometer(); // instance of the Chronometer
 > 
 > // ...
@@ -125,7 +126,7 @@ Let's implement the `Chronometer` class following the below requirements:
 
   -  `currentTime`, with the initial value set to `0`.
 
-  - `intervalId`, with the initial value set to `null`.
+  -  `intervalId`, with the initial value set to `null`.
 
 
 
@@ -313,6 +314,7 @@ The `split` method should take no arguments, and it should return a string where
 <details>
   <summary> Click here to see the image </summary>
 
+
 <br>
 
 ![](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_a5c9687f25bd710b2e7658ee6d997174.png)
@@ -325,28 +327,66 @@ The `split` method should take no arguments, and it should return a string where
 
 
 
-### BONUS - Iteration 9: Milliseconds
+### BONUS - Iteration 9: Centiseconds
 
-Our chronometer is now fully functional, and we can use it to measure how much time we spend on each exercise. Now, what if we want to calculate our time in a race? We would need to be more accurate with our chronometer. How can we be more accurate? By adding milliseconds!
+Our chronometer is now fully functional, and we can use it to measure how much time we spend on each exercise. Now, what if we want to calculate our time in a race? We would need to be more accurate with our chronometer. How can we be more accurate? By adding the hundredths of a second ([centiseconds](https://en.wiktionary.org/wiki/centisecond))!
 
 
-Finally, in JavaScript, we will have to add all the logic to show the milliseconds in the clock. You will also have to add these milliseconds to the split counter.
+Finally, in JavaScript, we will have to add all the logic to show the centiseconds on the stopwatch. You will also have to show these centiseconds in each *Splits* snapshot.
 
 ![](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_82e9d1fd5976a3f98bb1382f2385f6a1.png)
 
 Your goal is to create the JavaScript logic to:
 
-- Be able to count the milliseconds.
+- Be able to count the centiseconds.
+- Capture the centiseconds when you capture a split time.
+- Reset the current time to 0.
 
-- Show the milliseconds going forward.
 
-- Show the milliseconds when you capture a split time.
 
-- Clear the milliseconds when the Reset button is clicked.
+**Note:** This slightly more complicated iteration will require you to modify the *timer interval* and update the calculation logic for *minutes*, *seconds*, and *centiseconds*. Use the following conversion guideline as a reference:
 
-  
 
-**Note:** This slightly more complicated iteration will require you to modify the *timer interval* and update the calculation logic for *minutes*, *seconds*, and *milliseconds*. Additionally, Implementing the milliseconds feature will result in some tests (that you have previously passed) breaking.
+
+> 1 centisecond = 10 milliseconds
+>
+> 1 second = 100 centiseconds = 1000 milliseconds
+
+<br>
+
+
+
+#### Tests & File Setup (Bonus - Iteration 9: Centiseconds)
+
+You'll use different tests and a different working file for this iteration. To do so, change your HTML files:
+
+1. In `SpecRunner.html`, *comment out* the two script tags in use and *uncomment* the two for the bonus iteration, like this:
+
+   ```html
+       <!--  Iterations 1 - 8 -->
+       <!-- <script src="src/chronometer.js"></script> -->
+       <!-- <script src="tests/chronometer.spec.js"></script> -->
+   
+       <!-- Bonus Iteration 9: Centiseconds -->
+       <script src="src/chronometer-centiseconds.js"></script>
+       <script src="tests/chronometer-centiseconds.spec.js"></script>
+   ```
+
+   
+
+2. In `index.html`, *comment out* the script tag loading the `chronometer.js` file, and *uncomment* the `chronometer-centiseconds.js` one, like this:
+
+   ```html
+     <!--  Iterations 1 - 8 -->
+     <!-- <script src="src/chronometer.js"></script> -->
+   
+     <!-- Bonus Iteration 9: Centiseconds -->
+     <script src="src/chronometer-centiseconds.js"></script>
+   ```
+
+   
+
+
 
 
 

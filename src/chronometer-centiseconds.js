@@ -15,6 +15,10 @@ class Chronometer {
     // ... your code goes here
   }
 
+  getCentiseconds() {
+    // ... your code goes here
+  }
+
   computeTwoDigitNumber(value) {
     // ... your code goes here
   }
@@ -30,10 +34,4 @@ class Chronometer {
   split() {
     // ... your code goes here
   }
-}
-
-// The following is required to make unit tests work.
-/* Environment setup. Do not modify the below code. */
-if (typeof module !== 'undefined') {
-  module.exports = Chronometer;
 }

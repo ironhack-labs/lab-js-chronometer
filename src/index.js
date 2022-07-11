@@ -7,14 +7,14 @@ let minDec = document.getElementById('minDec');
 let minUni = document.getElementById('minUni');
 let secDec = document.getElementById('secDec');
 let secUni = document.getElementById('secUni');
-let milDec = document.getElementById('milDec');
-let milUni = document.getElementById('milUni');
+let centisecDec = document.getElementById('centisecDec');
+let centisecUni = document.getElementById('centisecUni');
 let splits = document.getElementById('splits');
 
 function printTime() {
   printMinutes();
   printSeconds();
-  printMilliseconds();
+  printCentiseconds();
 }
 
 function printMinutes() {
@@ -27,9 +27,9 @@ function printSeconds() {
   secDec.innerHTML = chronometer.computeTwoDigitNumber(chronometer.getSeconds())[0];
 }
 
-function printMilliseconds() {
-  milUni.innerHTML = chronometer.computeTwoDigitNumber(chronometer.getMilliseconds())[1];
-  milDec.innerHTML = chronometer.computeTwoDigitNumber(chronometer.getMilliseconds())[0];
+function printCentiseconds() {
+  centisecUni.innerHTML = chronometer.computeTwoDigitNumber(chronometer.getCentiseconds())[1];
+  centisecDec.innerHTML = chronometer.computeTwoDigitNumber(chronometer.getCentiseconds())[0];
 }
 
 function printSplit() {
