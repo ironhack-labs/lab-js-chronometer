@@ -44,10 +44,10 @@ class Chronometer {
   }
 
   split() {
-    let twoDigitMinute = (this.computeTwoDigitNumber(this.getMinutes()))
-    let twoDigitSecond = (this.computeTwoDigitNumber(this.getSeconds()))
-    let twoDigitCentisecond = (this.computeTwoDigitNumber(this.getCentiseconds()))
-     return `${twoDigitMinute}` + `:` + `${twoDigitSecond}` + '.' + `${twoDigitCentisecond}`
+    let twoDigitMinute = (this.computeTwoDigitNumber(this.getMinutes()));
+    let twoDigitSecond = (this.computeTwoDigitNumber(this.getSeconds()));
+    let twoDigitCentisecond = (this.computeTwoDigitNumber(this.getCentiseconds()));
+     return `${twoDigitMinute}` + `:` + `${twoDigitSecond}` + '.' + `${twoDigitCentisecond}`;
   }
 }
 
