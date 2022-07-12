@@ -1,33 +1,57 @@
 class Chronometer {
   constructor() {
-    // ... your code goes here
+    this.currentTime = 0;
+    this.intervalId = null;
   }
 
   start(printTimeCallback) {
-    // ... your code goes here
+    this.intervalId = setInterval(() => {
+      this.currentTime++;
+      if (printTimeCallback) printTimeCallback();
+    }, 1000);
   }
 
   getMinutes() {
-    // ... your code goes here
+    const secondsToMinutes = Math.floor(this.currentTime / 60);
+    return secondsToMinutes;
   }
 
   getSeconds() {
-    // ... your code goes here
+    const numbersOfSeconds = this.currentTime % 60;
+    return numbersOfSeconds;
   }
 
   computeTwoDigitNumber(value) {
-    // ... your code goes here
+    const newTime = value;
+    const stringTime = newTime.toString();
+
+    if (stringTime <= 9) {
+      return "0" + stringTime.slice(-2);
+    } else {
+      return stringTime;
+    }
   }
 
+  /*   if(value < 10){
+    return `0${value}`
+  } else {
+    return `${value}`
+  }
+  return value; */
+
+  // to.string - Description - The toString() method returns a string representing the specified array and its elements.
+  // to.slice - method returns a shallow copy of a portion of an array into a new array object selected from begin to end (end not included). The original array will not be modified.
   stop() {
-    // ... your code goes here
+    clearInterval(this.intervalId);
   }
 
   reset() {
-    // ... your code goes here
+    this.currentTime = 0;
   }
 
   split() {
-    // ... your code goes here
+    const minutes = this.computeTwoDigitNumber(this.getMinutes());
+    const seconds = this.computeTwoDigitNumber(this.getSeconds());
+    return ``;
   }
 }
