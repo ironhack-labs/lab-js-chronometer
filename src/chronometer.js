@@ -9,11 +9,11 @@ class Chronometer {
     this.intervalId = setInterval(() => {
       this.currentTime++
       if (printTimeCallback) printTimeCallback()
-    }, 1000)
+    }, 10)
   }
 
   getMinutes() {
-    return Math.floor(this.currentTime / 60)
+    return Math.floor(this.currentTime / 6000)
   }
 
   getSeconds() {
