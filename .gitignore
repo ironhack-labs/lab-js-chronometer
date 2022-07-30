@@ -4,3 +4,4 @@ node_modules
 yarn.lock
 *.log
 lab-solution.html
+.vscode-upload.json
