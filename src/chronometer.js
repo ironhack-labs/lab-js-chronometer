@@ -45,7 +45,6 @@ class Chronometer {
 
   stop() {
    
-
     clearInterval(this.intervalId);
   }
 
