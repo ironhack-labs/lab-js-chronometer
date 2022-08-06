@@ -8,6 +8,9 @@ class Chronometer {
       this.currentTime++;
       if (printTimeCallback) printTimeCallback();
     }, 10);
+    // printTimeCallback(); // That should be working, right? But debugger says printTimeCallback is not a function...
+    //   // I found the answer in the description of the V1 lab "If no callback is passed, it should be disregarded
+    //   // (hint: you should check whether if the callback was passed before attempting to run it)."
   }
 
   getMinutes() {
@@ -39,7 +42,6 @@ class Chronometer {
     const minutes = this.computeTwoDigitNumber(this.getMinutes());
     const seconds = this.computeTwoDigitNumber(this.getSeconds());
     const centiseconds = this.computeTwoDigitNumber(this.getCentiseconds());
-    // console.log(`${minutes}:${seconds}:${centiSeconds}`);
     return `${minutes}:${seconds}.${centiseconds}`;
   }
 }
