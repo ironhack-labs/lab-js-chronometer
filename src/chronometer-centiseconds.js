@@ -15,10 +15,13 @@ class Chronometer {
 
   getMinutes() {
     return this.currentTime < 6000 ? 0 : Math.floor(this.currentTime / 6000);
+    // Sure, unnecessary - Math.floor !== Math.round
+    // return Math.floor(this.currentTime / 6000);
   }
 
   getSeconds() {
     return this.currentTime < 100 ? 0 : Math.floor((this.currentTime % 6000) / 100);
+    // return Math.floor((this.currentTime % 6000) / 100);
   }
 
   getCentiseconds() {
@@ -28,6 +31,7 @@ class Chronometer {
   computeTwoDigitNumber(value) {
     const string = value.toString();
     return string.length === 2 ? string : "0" + string;
+    // very nice: return value.toString().padStart(2,"0");
   }
 
   stop() {
