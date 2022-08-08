@@ -155,6 +155,7 @@ When called, the `start` will begin keeping track of time by running a function 
 You should use the `setInterval` method to achieve this. The *interval id* that is returned by calling `setInterval` should be assigned to the `intervalId` property, so this way, we will be able to clear it later on when we need to stop the timer.
 
 Additionally, the `start` method should accept a function as an argument. Let's name it `printTimeCallback`. Once `start` is invoked, the said `printTimeCallback` should be executed in 1-second intervals, meaning inside the `setInterval`.
+If `printTimeCallback` is not passed, it should be disregarded (hint: you should check whether if the callback was passed before attempting to run it).
 
 
 
