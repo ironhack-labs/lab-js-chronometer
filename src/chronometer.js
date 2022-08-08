@@ -36,6 +36,14 @@ class Chronometer {
   }
 
   split() {
-    // ... your code goes here
+    let minTimeStamp = this.getMinutes(this.currentTime);
+    let secTimeStamp = this.getSeconds(this.currentTime);
+    if (minTimeStamp === 0) {
+      return `00:${this.computeTwoDigitNumber(this.currentTime)}`;
+    } else {
+      return `${this.computeTwoDigitNumber(
+        minTimeStamp
+      )}:${this.computeTwoDigitNumber(secTimeStamp)}`;
+    }
   }
 }
