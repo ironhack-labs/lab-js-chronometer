@@ -35,7 +35,7 @@ describe('Chronometer class', () => {
 
     it('should receive 1 argument (printTimeCallback)', () => {
       expect(chronometer.start.length).toEqual(1);
-    });    
+    });
 
     it('should increment by 1 the currentTime property on every 1 second interval', () => {
       chronometer.start();
@@ -51,7 +51,7 @@ describe('Chronometer class', () => {
     });
 
     it('should increment the currentTime property to 3 after 3 seconds', () => {
-      chronometer.start();      
+      chronometer.start();
       jasmine.clock().tick(3000);
       expect(chronometer.currentTime).toEqual(3);
     });
@@ -64,7 +64,7 @@ describe('Chronometer class', () => {
 
     it('should not receive any arguments', () => {
       expect(chronometer.getMinutes.length).toEqual(0);
-    });        
+    });
 
     it('should return a number', () => {
       chronometer.currentTime = 65;
@@ -98,7 +98,7 @@ describe('Chronometer class', () => {
 
     it('should not receive any arguments', () => {
       expect(chronometer.getSeconds.length).toEqual(0);
-    });    
+    });
 
     it('should return a number', () => {
       chronometer.currentTime = 3;
@@ -128,7 +128,7 @@ describe('Chronometer class', () => {
 
     it('should receive 1 argument (value)', () => {
       expect(chronometer.computeTwoDigitNumber.length).toEqual(1);
-    });     
+    });
 
     it('should return a string', () => {
       expect(typeof chronometer.computeTwoDigitNumber(7)).toEqual('string');
@@ -167,7 +167,7 @@ describe('Chronometer class', () => {
 
     it('should not receive any arguments', () => {
       expect(chronometer.stop.length).toEqual(0);
-    });        
+    });
 
     it('should call the clearInterval', () => {
       spyOn(window, 'clearInterval');
@@ -181,8 +181,8 @@ describe('Chronometer class', () => {
       jasmine.clock().tick(1000);
       expect(chronometer.currentTime).toEqual(1);
       chronometer.stop();
-      
-      jasmine.clock().tick(2000);      
+
+      jasmine.clock().tick(2000);
       expect(chronometer.currentTime).toEqual(1);
     });
   });
@@ -194,7 +194,7 @@ describe('Chronometer class', () => {
 
     it('should not receive any arguments', () => {
       expect(chronometer.reset.length).toEqual(0);
-    });       
+    });
 
     it('should reset the value of the "currentTime" property to 0', () => {
       chronometer.currentTime = 5;
@@ -210,7 +210,7 @@ describe('Chronometer class', () => {
 
     it('should not receive any arguments', () => {
       expect(chronometer.split.length).toEqual(0);
-    });           
+    });
 
     it('should return valid format with minutes and seconds "mm:ss"', () => {
       chronometer.currentTime = 5;
