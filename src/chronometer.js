@@ -54,13 +54,18 @@ class Chronometer {
 
   split() {
     // ... your code goes here
-    const minutes = this.getMinutes() // save the getMinutes method in a 
+    // save the getMinutes method inside of a new variable
+    const minutes = this.getMinutes()
+
+    // save the getSeconds method inside of a new variable
     const seconds = this.getSeconds()
+
+    // B/C the computeTwoDigitNumber method already exists, we can input the new variables (minutes & seconds) as values, which outputs a string.
+    // save the outputs in two variables
     let stringOne = this.computeTwoDigitNumber(minutes)
     let stringTwo = this.computeTwoDigitNumber(seconds)
 
-    // computeTwoDigitNumber()
-
+    // return both variables 
     return `${stringOne}:${stringTwo}`
   }
 }
