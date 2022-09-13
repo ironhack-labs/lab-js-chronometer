@@ -17,11 +17,17 @@ class Chronometer {
   }
 
   getMinutes() {
-    // ... your code goes here
+
+    let minutes = this.currentTime/60;
+    return Math.floor(minutes);   
+     
   }
 
   getSeconds() {
-    // ... your code goes here
+
+    let seconds = this.currentTime%60;
+    return seconds;
+
   }
 
   computeTwoDigitNumber(value) {
