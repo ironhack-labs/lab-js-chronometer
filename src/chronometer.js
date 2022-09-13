@@ -28,15 +28,13 @@ class Chronometer {
     if(value%60 < 10){
       twoDigitNumber = "0" + (value%60);
     } else {
-      twoDigitNumber = "" + value%60;
+      twoDigitNumber = "" + (value%60);
     }
-
-
     return twoDigitNumber;
   }
 
   stop() {
-    // ... your code goes here
+    clearInterval(this.intervalId);
   }
 
   reset() {
