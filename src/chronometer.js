@@ -20,7 +20,7 @@ class Chronometer {
 
     let minutes = this.currentTime/60;
     return Math.floor(minutes);   
-     
+
   }
 
   getSeconds() {
@@ -31,18 +31,34 @@ class Chronometer {
   }
 
   computeTwoDigitNumber(value) {
-    // ... your code goes here
+    let stValue = value.toString();
+    if(value < 10){
+      return "0" + stValue;
+    }else if(value < 100){
+      return stValue;
+    }        
+
   }
 
   stop() {
-    // ... your code goes here
+
+    clearInterval(this.intervalId);
+
   }
 
   reset() {
-    // ... your code goes here
+
+    this.currentTime = 0;
+
   }
 
+
   split() {
-    // ... your code goes here
+   
+    let minutes = this.getMinutes;
+    let seconds = this.getSeconds;
+    let minAndSec = `${computeTwoDigitNumber(minutes)}:${this.computeTwoDigitNumber(seconds)}`;
+    return minAndSec;    
+
   }
 }
