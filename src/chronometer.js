@@ -24,7 +24,15 @@ class Chronometer {
   }
 
   computeTwoDigitNumber(value) {
-    // ... your code goes here
+    let twoDigitNumber = "";
+    if(value%60 < 10){
+      twoDigitNumber = "0" + (value%60);
+    } else {
+      twoDigitNumber = "" + value%60;
+    }
+
+
+    return twoDigitNumber;
   }
 
   stop() {
