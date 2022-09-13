@@ -9,13 +9,14 @@ class Chronometer {
       this.currentTime++;
       if (printTimeCallback){
         printTimeCallback();
-      }
-      
+      }     
     }, 1000);
   }
 
   getMinutes() {
-    // ... your code goes here
+    // math.floor
+    const minutes = Math.floor(this.currentTime/60);
+    return minutes;
   }
 
   getSeconds() {
