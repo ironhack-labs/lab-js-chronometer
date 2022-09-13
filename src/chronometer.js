@@ -1,11 +1,15 @@
 class Chronometer {
   constructor() {
-    // ... your code goes here
+    this.currentTime = 0;
+    this.intervalId = null;
+    
   }
 
   start(printTimeCallback) {
-    // ... your code goes here
-  }
+    
+    // ... your code goes here   - check if variable is a function ... this.intervalId = setInterval (() => { }, 1000)
+
+}
 
   getMinutes() {
     // ... your code goes here
