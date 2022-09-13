@@ -23,9 +23,7 @@ class Chronometer {
   }
 
   computeTwoDigitNumber(value) {
-    // ... your code goes here
-    // we should always get twoDigits
-    // 5 should be 05
+    return value.toString().padStart(2, 0);
   }
 
   stop() {
