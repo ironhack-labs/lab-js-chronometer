@@ -22,7 +22,13 @@ class Chronometer {
   }
 
   computeTwoDigitNumber(value) {
-    // ... your code goes here
+    const string = value.toString();
+    if (string.length === 1) {
+      let newString = "0" + string.slice(0);
+      return newString;
+    } else {
+      return string;
+    }
   }
 
   stop() {
