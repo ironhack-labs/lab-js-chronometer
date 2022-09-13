@@ -7,7 +7,7 @@ class Chronometer {
   start(printTimeCallback) {
     this.intervalId = setInterval(() => {
       this.currentTime++;
-      if (typeof printTimeCallback === "function") {
+      if (printTimeCallback) {
         printTimeCallback();
       }
     }, 1000);
@@ -35,6 +35,7 @@ class Chronometer {
   }
 
   split() {
-    
+    let fourDigitNumber = ('0' + Math.floor(this.currentTime/60)).slice(-2) + ':' + ('0' + Math.floor(this.currentTime % 60)).slice(-2);
+  return fourDigitNumber;
   }
 }
