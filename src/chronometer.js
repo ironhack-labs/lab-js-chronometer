@@ -25,20 +25,19 @@ class Chronometer {
   }
 
   computeTwoDigitNumber(value) {
-    const twoDigits = "";
-    twoDigits = this.currentTime.slice(0);
-    return twoDigits;
+    return ("0" + value).slice(-2);
+    
   }
 
   stop() {
-    // ... your code goes here
+    clearInterval(this.intervalId)
   }
 
   reset() {
-    // ... your code goes here
+    this.currentTime =0
   }
 
   split() {
-    // ... your code goes here
+
   }
 }
