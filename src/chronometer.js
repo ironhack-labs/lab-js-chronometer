@@ -5,9 +5,10 @@ class Chronometer {
   }
 
   start(printTimeCallback) {
-    const intervalId = setInterval(() => { 
-      this.currentTime += 1;
-      printTimeCallback();
+    this.intervalId = setInterval(() => { 
+      this.currentTime++;
+      //printTimeCallback = function();
+      //printTimeCallback();
     } , 1000)
   }
 
@@ -33,6 +34,6 @@ class Chronometer {
   }
 
   split() {
-    computeTwoDigitNumber(this.getMinutes, this.getSeconds)
+    this.getMinutes + this.getSeconds
   }
 }
