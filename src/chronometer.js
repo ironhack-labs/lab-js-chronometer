@@ -14,7 +14,6 @@ class Chronometer {
   }
 
   getMinutes() {
-    // math.floor
     const minutes = Math.floor(this.currentTime/60);
     return minutes;
   }
@@ -26,9 +25,9 @@ class Chronometer {
   computeTwoDigitNumber(value) {
     let twoDigitNumber = "";
     if(value%60 < 10){
-      twoDigitNumber = "0" + (value%60);
+      twoDigitNumber = `0${value%60}`;
     } else {
-      twoDigitNumber = "" + (value%60);
+      twoDigitNumber = `${value%60}`;
     }
     return twoDigitNumber;
   }
@@ -42,6 +41,6 @@ class Chronometer {
   }
 
   split() {
-    return this.computeTwoDigitNumber(this.getMinutes()) + ":" + this.computeTwoDigitNumber(this.getSeconds());
+    return `${this.computeTwoDigitNumber(this.getMinutes())}:${this.computeTwoDigitNumber(this.getSeconds())}`;
   }
 }
