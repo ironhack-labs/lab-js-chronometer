@@ -23,6 +23,11 @@ class Chronometer {
     return `${value}`;
   }
   
+  stop() {
+    clearInterval(this.intervalId);
+    clearInterval(this.intervalMilliSec);
+  }
+  
 
   
 
