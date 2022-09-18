@@ -9,7 +9,11 @@ class Chronometer {
       if (printTimeCallback) printTimeCallback ()
     }, 1000);
   }
-  
+
+  getMinutes() {
+    return Math.floor(this.currentTime / 60);
+  }
+ 
 
 }
 
