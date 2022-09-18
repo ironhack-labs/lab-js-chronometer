@@ -3,5 +3,13 @@ class Chronometer {
     this.currentTime = 0;
     this.intervalId = null;
   }
+  start(printTimeCallback) {
+    this.intervalId = setInterval(() => {
+      this.currentTime++;
+      if (printTimeCallback) printTimeCallback ()
+    }, 1000);
+  }
+  
+
 }
 
