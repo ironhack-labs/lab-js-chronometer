@@ -18,6 +18,13 @@ class Chronometer {
     return Math.floor(this.currentTime % 60);
   }
 
+  computeTwoDigitNumber(value) {
+    if (value < 10) return `0${value}`;
+    return `${value}`;
+  }
+  
+
+  
 
 }
 
