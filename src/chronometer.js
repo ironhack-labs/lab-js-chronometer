@@ -28,6 +28,11 @@ class Chronometer {
     clearInterval(this.intervalMilliSec);
   }
   
+  reset() {
+    this.currentTime = 0;
+    this.milliseconds = 0;
+  }
+ 
 
   
 
