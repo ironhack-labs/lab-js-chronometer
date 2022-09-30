@@ -1,10 +1,8 @@
 class Chronometer {
-  constructor() {
-    // ... your code goes here
-  }
+  constructor() {}
 
   start(printTimeCallback) {
-    // ... your code goes here
+    // ... your ok goes here
   }
 
   getMinutes() {
