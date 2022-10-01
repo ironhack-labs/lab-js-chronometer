@@ -28,7 +28,7 @@ class Chronometer {
     if (finalValue.length < 2){
       return `0${finalValue}`;
     } else if (finalValue.length > 2) {
-      return finalValue.slice(0,5) ;
+      return finalValue.slice(0,1) ;
     } else {
       return finalValue;
     } 
