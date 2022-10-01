@@ -14,7 +14,7 @@ let splits = document.getElementById('splits');
 function printTime() {
   printMinutes();
   printSeconds();
-  printCentiseconds();
+  //printCentiseconds();
 }
 
 function printMinutes() {
@@ -27,10 +27,10 @@ function printSeconds() {
   secDec.innerHTML = chronometer.computeTwoDigitNumber(chronometer.getSeconds())[0];
 }
 
-function printCentiseconds() {
+/* function printCentiseconds() {
   centisecUni.innerHTML = chronometer.computeTwoDigitNumber(chronometer.getCentiseconds())[1];
   centisecDec.innerHTML = chronometer.computeTwoDigitNumber(chronometer.getCentiseconds())[0];
-}
+} */
 
 function printSplit() {
   let li = document.createElement('li');
