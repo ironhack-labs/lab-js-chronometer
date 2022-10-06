@@ -32,7 +32,7 @@ class Chronometer {
   }
 
   stop() {
-    clearInterval(this.intervalId)
+    clearInterval(this.currentTime)
   }
 
   reset() {
@@ -40,14 +40,10 @@ class Chronometer {
   }
 
   split() {
-    let stringMinutes = minutes.toString()
-    let stringSeconds = seconds.toString()
-    if (stringMinutes.slice(1) === ""){
-      stringMinutes = `0${stringMinutes}`
-    }
-    else if (stringSeconds.slice(1) === ""){
-      stringSeconds = `0${stringSeconds}`
-    }
-return `${stringMinutes}:${stringSeconds}`
+    this.getMinutes()
+    this.getSeconds()
+    let stringMinutes = this.computeTwoDigitNumber(this.minutes)
+    let stringSeconds = this.computeTwoDigitNumber(this.seconds)
+    return `${stringMinutes}:${stringSeconds}`
   }
 }
