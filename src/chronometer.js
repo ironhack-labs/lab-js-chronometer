@@ -46,7 +46,7 @@ class Chronometer {
       stringMinutes = `0${stringMinutes}`
     }
     else if (stringSeconds.slice(1) === ""){
-      stringSeconds = `0${stringMinutes}`
+      stringSeconds = `0${stringSeconds}`
     }
 return `${stringMinutes}:${stringSeconds}`
   }
