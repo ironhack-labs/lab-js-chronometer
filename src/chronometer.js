@@ -34,10 +34,11 @@ class Chronometer {
   }
 
   reset() {
-    return this.currentTime = 0;
+    return this.currentTime = 0
   }
 
   split() {
-     
+    return `${this.computeTwoDigitNumber(
+      this.getMinutes())}`+':'+`${this.computeTwoDigitNumber(this.getSeconds())}`;
   }
 }
