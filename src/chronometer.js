@@ -15,12 +15,15 @@ class Chronometer {
 
   getMinutes() {
     let totalTime = Math.floor(this.currentTime / 60);
-return totalTime
+    return totalTime
 
   }
 
   getSeconds() {
-    // ... your code goes here
+    if (this.currentTime >= 60)
+      return Math.floor(this.currentTime % 60);
+    else
+      return this.currentTime;
   }
 
   computeTwoDigitNumber(value) {
