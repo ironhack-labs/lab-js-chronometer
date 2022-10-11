@@ -44,6 +44,7 @@ class Chronometer {
   }
 
   reset() {
+    this.currentTime = 0
     // ... your code goes here
   }
 
