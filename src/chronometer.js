@@ -27,20 +27,22 @@ class Chronometer {
   }
 
   computeTwoDigitNumber(value) {
-   if(value<10){
-    value="0"+ value}
+    if (value < 10) {
+      value = "0" + value
+    }
     return value.toString();
   }
 
   stop() {
-    // ... your code goes here
+    clearInterval(this.intervalId)
+
   }
 
   reset() {
-    // ... your code goes here
+    this.currentTime = 0
   }
 
   split() {
-    // ... your code goes here
+    return this.computeTwoDigitNumber(this.getMinutes()) + ":" + this.computeTwoDigitNumber(this.getSeconds())
   }
 }
