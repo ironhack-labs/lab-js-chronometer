@@ -6,6 +6,15 @@ class Chronometer {
   }
 
   start(printTimeCallback) {
+     
+
+    setInterval(() => {
+      this.currentTime += 1
+      
+      console.log(this)
+      if (typeof printTimeCallback == "function") {
+      printTimeCallback()}
+    },1000)
     // ... your code goes here
   }
 
