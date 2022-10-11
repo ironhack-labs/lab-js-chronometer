@@ -31,6 +31,8 @@ class Chronometer {
   }
 
   computeTwoDigitNumber(value) {
+    let paddedNumber = ("0" + value).slice(-2);
+  return paddedNumber;
     // ... your code goes here
   }
 
