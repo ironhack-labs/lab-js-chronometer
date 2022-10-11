@@ -37,6 +37,9 @@ class Chronometer {
   }
 
   stop() {
+//    if (this.intervalId) {
+      clearInterval(this.intervalId)
+ //   }
     // ... your code goes here
   }
 
