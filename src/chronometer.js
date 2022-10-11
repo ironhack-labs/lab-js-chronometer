@@ -19,11 +19,13 @@ class Chronometer {
   }
 
   getMinutes() {
+    this.currentTime
+    return Math.floor(this.currentTime/60)
     // ... your code goes here
   }
 
   getSeconds() {
-    // ... your code goes here
+        // ... your code goes here
   }
 
   computeTwoDigitNumber(value) {
