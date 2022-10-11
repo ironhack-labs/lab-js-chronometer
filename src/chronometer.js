@@ -6,12 +6,8 @@ class Chronometer {
   }
 
   start(printTimeCallback) {
-     
-
     setInterval(() => {
       this.currentTime += 1
-      
-      console.log(this)
       if (typeof printTimeCallback == "function") {
       printTimeCallback()}
     },1000)
@@ -40,7 +36,7 @@ class Chronometer {
 //    if (this.intervalId) {
       clearInterval(this.intervalId)
  //   }
-    // ... your code goes here
+    // ... not sure why the commented-out conditional doesn't work
   }
 
   reset() {
@@ -49,6 +45,7 @@ class Chronometer {
   }
 
   split() {
-    // ... your code goes here
+    return `${getMinutes()} + ":" + ${getSeconds()}`
+        // ... your code goes here
   }
 }
