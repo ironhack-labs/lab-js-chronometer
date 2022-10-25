@@ -15,6 +15,17 @@ class Chronometer {
   
   }
 
+  /* Why this alternative solution doesn't work?
+  start(printTimeCallback) {
+    if(printTimeCallback){
+     this.intervalId = setInterval(() => {  
+          this.currentTime += 1;                    
+          printTimeCallback();
+      }, 1000);
+    } 
+  }
+  */
+
   getMinutes() {
     return Math.floor(this.currentTime / 60);
   }
