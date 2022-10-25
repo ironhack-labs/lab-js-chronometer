@@ -17,19 +17,19 @@ class Chronometer {
         // ... your code goes here
     }
 
-    
+
     getMinutes() {
-        return Math.floor(this.currentTime / 60)
+        return Math.floor(this.currentTime / 6000)
         // ... your code goes here
     }
-    
+
     getSeconds() {
-        return Math.floor(this.currentTime % 6)
+        return Math.floor(this.currentTime / 100 % 60)
         // ... your code goes here
     }
-    
+
     getCentiseconds() {
-        return Math.floor(this.currentTime % 6)
+        return Math.floor(this.currentTime % 100)
         // ... your code goes here
     }
 
@@ -50,7 +50,7 @@ class Chronometer {
     }
 
     split() {
-        return (this.computeTwoDigitNumber(this.getMinutes())).toString() + ":" + (this.computeTwoDigitNumber(this.getSeconds())).toString() + ":" + (this.computeTwoDigitNumber(this.getCentiseconds())).toString();
+        return (this.computeTwoDigitNumber(this.getMinutes())).toString() + ":" + (this.computeTwoDigitNumber(this.getSeconds())).toString() + "." + (this.computeTwoDigitNumber(this.getCentiseconds())).toString();
 
         // ... your code goes here
     }
