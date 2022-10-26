@@ -6,30 +6,28 @@ class Chronometer {
 
   start(printTimeCallback) {
     this.intervalId = setInterval(() => {
+      this.currentTime++
       if (printTimeCallback) {
         return printTimeCallback()
-      } else {
-        this.currentTime++
       }
-    }, 1000)
+    }, 10)
 
   }
 
   getMinutes() {
-    return Math.floor(this.currentTime / 60)
+    return Math.floor(this.currentTime / 6000)
   }
 
   getSeconds() {
-    if (this.currentTime === 0) {
-      return 0
-    } else {
-      return this.currentTime % 60
-    }
+    // console.log(this.currentTime)
+    return Math.floor(this.currentTime / 100) % 60
+
+
   }
 
 
   getCentiseconds() {
-    // ... your code goes here
+    return this.currentTime % 100
   }
 
   computeTwoDigitNumber(value) {
@@ -46,7 +44,7 @@ class Chronometer {
   }
 
   split() {
-    // console.log(this.computeTwoDigitNumber(this.getMinutes()))
-    return `${this.computeTwoDigitNumber(this.getMinutes())}:${this.computeTwoDigitNumber(this.getSeconds())}`
+    console.log(this.computeTwoDigitNumber(this.getCentiseconds()))
+    return `${this.computeTwoDigitNumber(this.getMinutes())}:${this.computeTwoDigitNumber(this.getSeconds())}.${this.computeTwoDigitNumber(this.getCentiseconds())}`
   }
 }
