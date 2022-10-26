@@ -49,11 +49,11 @@ class Chronometer {
 
   reset() {
     // ... your code goes here
-    his.currentTime = 0;
+    this.currentTime = 0;
   }
 
   split() {
     // ... your code goes here
-    `${this.computeTwoDigitNumber(this.getMinutes())}:${this.computeTwoDigitNumber(this.getSeconds())}.${this.computeTwoDigitNumber(this.getCentiseconds())}`}
+    return `${this.computeTwoDigitNumber(this.getMinutes())}:${this.computeTwoDigitNumber(this.getSeconds())}.${this.computeTwoDigitNumber(this.getCentiseconds())}`}
   }
 
