@@ -29,10 +29,8 @@ class Chronometer {
 
   computeTwoDigitNumber(value) {
     // ... your code goes here
-    let string = value.toString()
-    if (string.length === 1) {return "0" + string
-    } else if (string.length === 2) {return string
-    } 
+    if (value < 10) {return `0+${value}`
+    } else  {return `${value}`} 
   }
 
   stop() {
