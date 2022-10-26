@@ -4,6 +4,7 @@ class Chronometer {
     this.intervalId = null;
   }
 
+  /*
   start(printTimeCallback) {
     this.intervalId = setInterval(()=>{this.currentTime += 1;}, 1000);
     
@@ -12,19 +13,16 @@ class Chronometer {
           printTimeCallback();
       }, 1000);
     } 
-  
-  }
-
-  /* Why this alternative solution doesn't work?
-  start(printTimeCallback) {
-    if(printTimeCallback){
-     this.intervalId = setInterval(() => {  
-          this.currentTime += 1;                    
-          printTimeCallback();
-      }, 1000);
-    } 
   }
   */
+
+  start(printTimeCallback) {
+    this.intervalId = setInterval(() => {  
+      this.currentTime += 1;
+      if(printTimeCallback){printTimeCallback();}  
+    }, 1000);
+  }
+  
 
   getMinutes() {
     return Math.floor(this.currentTime / 60);
