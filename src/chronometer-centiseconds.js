@@ -1,37 +1,19 @@
 class Chronometer {
-  constructor() {
-    // ... your code goes here
-  }
+  constructor() {}
+  
+  start(printTimeCallback) {}
 
-  start(printTimeCallback) {
-    // ... your code goes here
-  }
+  getMinutes() {}
 
-  getMinutes() {
-    // ... your code goes here
-  }
+  getSeconds() {}
+ 
+  getCentiseconds() {}
 
-  getSeconds() {
-    // ... your code goes here
-  }
+  computeTwoDigitNumber(value) {}
 
-  getCentiseconds() {
-    // ... your code goes here
-  }
+  stop() {}
 
-  computeTwoDigitNumber(value) {
-    // ... your code goes here
-  }
+  reset() {}
 
-  stop() {
-    // ... your code goes here
-  }
-
-  reset() {
-    // ... your code goes here
-  }
-
-  split() {
-    // ... your code goes here
-  }
+  split() {}
 }
