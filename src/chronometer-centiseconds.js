@@ -22,7 +22,7 @@ class Chronometer {
   }
 
   getCentiseconds() {
-    return this.currentTime % ;
+    return this.currentTime % 6 ;
   }
 
   computeTwoDigitNumber(value) {
