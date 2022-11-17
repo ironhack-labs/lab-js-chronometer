@@ -5,9 +5,14 @@ class Chronometer {
   }
 
   start(printTimeCallback) {
-    printTimeCallback = () => this.currentTime++;
-    this.intervalId = setInterval(() => printTimeCallback(), 1000)
-    // why does should invoke the passed argument every one second work if I remove the this 
+   
+    const intervalId = setInterval(() => {
+      this.currentTime++;
+      if (typeof printTimeCallback === "function") {
+        printTimeCallback();
+      }
+    }, 1000);
+    this.intervalId = intervalId
   }
 
   getMinutes() {
