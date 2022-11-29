@@ -38,7 +38,7 @@ class Chronometer {
 
     let valueInstring = (this.value / 100).toFixed(2)
 
-       return valueInstring.slice(2,3);
+       return valueInstring.slice(2,4);
 
     
   }
