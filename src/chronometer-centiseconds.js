@@ -10,26 +10,27 @@ class Chronometer {
       if (typeof printTimeCallback === 'function') {
         printTimeCallback();
       }
-    }, 1000);
+    }, 10);
   }
 
   getMinutes() {
-    let minutes = Math.floor(this.currentTime / 60);
+    let minutes = Math.floor(this.currentTime / 6000);
     return minutes;
   }
 
   getSeconds() {
-    let seconds = Math.floor(this.currentTime) % 60;
+    let seconds = Math.floor(this.currentTime % 6000 / 100);
     return seconds;
   }
 
   getCentiseconds() {
-    // ... your code goes here
+    let centiseconds = (Math.floor(this.currentTime) % 6000) % 100;
+    return centiseconds;
   }
 
   computeTwoDigitNumber(value) {
     let valueAsString = value.toString();
-    if (valueAsString.length === 2) {
+    if (valueAsString.length > 1) {
       return valueAsString;
     } else {
       return `0${valueAsString}`;
@@ -45,6 +46,10 @@ class Chronometer {
   }
 
   split() {
-    // ... your code goes here
+    let minutes = this.getMinutes();
+    let seconds = this.getSeconds();
+    let centiseconds = this.getCentiseconds();
+    let formatted = `${this.computeTwoDigitNumber(minutes)}:${this.computeTwoDigitNumber(seconds)}.${this.computeTwoDigitNumber(centiseconds)}`;
+    return formatted;
   }
 }
