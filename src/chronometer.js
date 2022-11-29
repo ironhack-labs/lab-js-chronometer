@@ -14,7 +14,8 @@ class Chronometer {
   }
 
   getMinutes() {
-    // ... your code goes here
+    let minutes = Math.floor(this.currentTime / 60);
+    return minutes;
   }
 
   getSeconds() {
