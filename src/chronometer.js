@@ -8,11 +8,11 @@ class Chronometer {
     const intervalId = setInterval(() => {
         this.currentTime ++;     
         if(typeof printTimeCallback === 'function'){   
-          printTimeCallback()
+          printTimeCallback();
         }
     }, 1000);
 
-    return intervalId;
+    return this.intervalId = intervalId;
   }
 
   getMinutes() {
@@ -42,14 +42,17 @@ class Chronometer {
   }
 
   stop() {
-    // ... your code goes here
+    clearInterval(this.intervalId);
   }
 
   reset() {
-    // ... your code goes here
+    this.currentTime = 0;
   }
 
   split() {
-    // ... your code goes here
+    let minute = this.computeTwoDigitNumber(this.getMinutes());
+    let second = this.computeTwoDigitNumber(this.getSeconds());
+    let time = minute + ':' + second;
+    return time;
   }
 }
