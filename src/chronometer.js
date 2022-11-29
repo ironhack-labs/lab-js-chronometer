@@ -9,7 +9,7 @@ class Chronometer {
   start(printTimeCallback) {
     // iteration 2: the start method
     this.intervalId = setInterval(() => {
-      if(printTimeCallback){
+      if(typeof printTimeCallback === 'function'){
         printTimeCallback();
       }
       this.currentTime++;
@@ -49,5 +49,10 @@ class Chronometer {
 
   split() {
     // iteration 8: the split method
+    let minutes = this.getMinutes();
+    let seconds = this.getSeconds();
+    let newFormat = `${this.computeTwoDigitNumber(minutes)}:${this.computeTwoDigitNumber(seconds)}`;
+
+    return newFormat;
   }
 }
