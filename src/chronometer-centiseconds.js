@@ -1,37 +1,72 @@
 class Chronometer {
   constructor() {
-    // ... your code goes here
+    // DONE
+    this.currentTime = 0;
+    this.intervalId = null;
   }
 
   start(printTimeCallback) {
-    // ... your code goes here
+    //  DONE
+    const initialiseTimer = setInterval(() => {
+      this.currentTime++;
+      if (typeof printTimeCallback === 'function') {
+        printTimeCallback();
+      }
+    }, 10);
+    this.intervalId = initialiseTimer;
   }
 
   getMinutes() {
-    // ... your code goes here
+    //  DONE
+    return Math.floor(this.currentTime / (60 * 100));
   }
 
   getSeconds() {
-    // ... your code goes here
+    // DONE
+    return Math.floor((this.currentTime * 0.01) % 60);
   }
 
   getCentiseconds() {
-    // ... your code goes here
+    // DONE
+    return Math.floor(this.currentTime % 100);
   }
 
   computeTwoDigitNumber(value) {
-    // ... your code goes here
+    // DONE - tough one! Might need advise on better coding practice
+    let addZero = '';
+    if (typeof value != 'number') {
+      if (value.length === 1 && value.length <= 2) {
+        addZero = '0' + value;
+      } else {
+        addZero = value;
+      }
+    } else {
+      // number, convert to string
+      let strValue = value.toLocaleString();
+      if (strValue.length === 1 && strValue.length <= 1) {
+        addZero = '0' + strValue;
+      } else {
+        addZero = strValue;
+      }
+    }
+    return addZero;
   }
 
   stop() {
-    // ... your code goes here
+    //  DONE
+    clearInterval(this.intervalId);
   }
 
   reset() {
-    // ... your code goes here
+    //  DONE
+    return (this.currentTime = 0);
   }
 
   split() {
-    // ... your code goes here
+    // DONE
+    let theMinutes = this.computeTwoDigitNumber(Math.floor(this.currentTime / (60 * 100)));
+    let theSeconds = this.computeTwoDigitNumber(Math.floor((this.currentTime * 0.01) % 60));
+    let theCentiseconds = this.computeTwoDigitNumber(Math.floor(this.currentTime % 100));
+    return `${theMinutes}:${theSeconds}.${theCentiseconds}`;
   }
 }
