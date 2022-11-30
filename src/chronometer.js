@@ -16,9 +16,10 @@ class Chronometer {
   }
 
   getMinutes() {
+    /*
     if (!this.start()) {
       return 0;
-    }
+    }*/
     const minute = Math.floor(this.currentTime / 60);
     return minute;
   }
