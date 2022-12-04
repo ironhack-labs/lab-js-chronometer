@@ -23,18 +23,19 @@ class Chronometer {
   }
 
   computeTwoDigitNumber(value) {
-    
+    return value < 10 ? `0${value.toString()}`: value.toString()
   }
+  //.slice(0,2)
 
   stop() {
-    // ... your code goes here
+    clearInterval(this.intervalId) 
   }
 
   reset() {
-    // ... your code goes here
+    this.currentTime = 0
   }
 
   split() {
-    // ... your code goes here
+    return `${this.computeTwoDigitNumber(this.getMinutes())}:${this.computeTwoDigitNumber(this.getSeconds())}`
   }
 }
