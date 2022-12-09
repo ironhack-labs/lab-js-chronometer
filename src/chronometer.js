@@ -27,6 +27,7 @@ class Chronometer {
 
   computeTwoDigitNumber(value) {
     // ... your code goes here
+    return (`0${value.toString()}`).slice(-2)
   }
 
   stop() {
