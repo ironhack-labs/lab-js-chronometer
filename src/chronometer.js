@@ -12,17 +12,21 @@ class Chronometer {
       if (printTimeCallback) {
         printTimeCallback()
       }
-    }, 1000)
+    }, 10)
   }
 
   getMinutes() {
     // ... your code goes here
-    return Math.floor(this.currentTime / 60)
+    return Math.floor(this.currentTime / 6000)
   }
 
   getSeconds() {
     // ... your code goes here
-    return this.currentTime % 60
+    return Math.floor((this.currentTime % 6000) / 100)
+  }
+
+  getCentiseconds() {
+    return Math.floor((this.currentTime % 6000) % 100)
   }
 
   computeTwoDigitNumber(value) {
@@ -42,6 +46,6 @@ class Chronometer {
 
   split() {
     // ... your code goes here
-    return `${this.computeTwoDigitNumber(this.getMinutes(this.currentTime))}:${this.computeTwoDigitNumber(this.getSeconds(this.currentTime))}`
+    return `${this.computeTwoDigitNumber(this.getMinutes())}:${this.computeTwoDigitNumber(this.getSeconds())}:${this.computeTwoDigitNumber(this.getCentiseconds())}`
   }
 }
