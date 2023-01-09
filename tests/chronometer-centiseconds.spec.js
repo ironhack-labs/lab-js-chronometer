@@ -1,9 +1,6 @@
 describe('Chronometer class', () => {
   let chronometer;
-
-  beforeEach(() => {
-    chronometer = new Chronometer();
-  });
+  
 
   it('should not receive any arguments', () => {
     expect(Chronometer.length).toEqual(0);
