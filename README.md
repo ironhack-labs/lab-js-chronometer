@@ -76,6 +76,7 @@ To start, **open the `index.html` page in the browser**. You should see the *sto
   <summary> Click here to see the image</summary>
 
 
+
 <br>
 
 ![](https://education-team-2020.s3-eu-west-1.amazonaws.com/web-dev/labs/chronometer.png)
@@ -154,7 +155,7 @@ When called, the `start` will begin keeping track of time by running a function 
 
 You should use the `setInterval` method to achieve this. The *interval id* that is returned by calling `setInterval` should be assigned to the `intervalId` property, so this way, we will be able to clear it later on when we need to stop the timer.
 
-Additionally, the `start` method should accept a function as an argument. Let's name it `printTimeCallback`. Once `start` is invoked, the said `printTimeCallback` should be executed in 1-second intervals, meaning inside the `setInterval`.
+Additionally, the `start` method should accept a *callback function* as an argument. Let's name it `printTimeCallback`. Once `start` is invoked, the said `printTimeCallback` function should be executed in 1-second intervals, meaning inside the `setInterval`.
 If `printTimeCallback` is not passed, it should be disregarded (hint: you should check whether if the callback was passed before attempting to run it).
 
 
@@ -316,6 +317,7 @@ The `split` method should take no arguments, and it should return a string where
   <summary> Click here to see the image </summary>
 
 
+
 <br>
 
 ![](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_a5c9687f25bd710b2e7658ee6d997174.png)
@@ -395,4 +397,279 @@ You'll use different tests and a different working file for this iteration. To d
 <br>
 
 **Happy coding!** :heart:
+
+
+
+
+
+## FAQs
+
+
+
+<details>
+  <summary>I am stuck in the exercise and don't know how to solve the problem or where to start.</summary>
+  <br>
+
+
+  If you are stuck in your code and don't know how to solve the problem or where to start, you should take a step back and try to form a clear question about the specific issue you are facing. This will help you narrow down the problem and come up with potential solutions.
+
+
+For example, is it a concept that you don't understand, or are you receiving an error message that you don't know how to fix? It is usually helpful to try to state the problem as clearly as possible, including any error messages you are receiving. This can help you communicate the issue to others and potentially get help from classmates or online resources. 
+
+
+Once you have a clear understanding of the problem, you will be able to start working towards the solution.
+
+  [Back to top](#faqs)
+</details>
+
+
+
+
+
+<details>
+  <summary>All of the Jasmine tests are failing and in red. Why did this happen?</summary>
+  <br>
+
+
+  One possible reason why all of the Jasmine tests are failing is that there is a syntax error in the code being tested. If the code contains a syntax error, it will not be loaded properly and none of the tests will be able to run. This will cause all of the tests to fail.
+
+
+
+To troubleshoot this issue, you will need to examine the code being tested for syntax errors. Look for missing brackets, semicolons, or other syntax issues that could be causing the problem. If you find a syntax error, correct it and try running the tests again.
+
+
+
+
+Another possibility is that there is an issue with the tests. It is possible that you may have modified the test file and caused an issue. If you have made changes to the test file, try copying and pasting the original test file and running the tests again to see if this resolves the issue.
+
+
+
+  [Back to top](#faqs)
+</details>
+
+
+
+
+
+<details>
+  <summary>How to use <code>setTimeout()</code> and <code>clearTimeout()</code>?</summary>
+  <br>
+
+`setTimeout()` is a global function that can be used to execute a callback function after a specified delay.
+
+<br>
+
+##### Syntax:
+
+```js
+setTimeout(callback, delay);
+```
+
+- `callback` is the function that will be executed after the specified delay.
+- `delay` is the time in milliseconds that the callback function should be delayed before being executed.
+
+<br>
+
+##### Using `setTimeout()`
+
+Here is an example of using `setTimeout()` to log a message to the console after a delay of 2000 milliseconds (2 seconds):
+
+```js
+setTimeout(() => {
+  console.log("Hi!");
+}, 2000);
+```
+
+
+
+##### Canceling a timeout with `clearTimeout()`
+
+When invoked, `setTimeout()` returns a timer ID that can be used to cancel the execution of the callback function using the `clearTimeout()` function:
+
+```js
+const timerId = setTimeout(() => {
+  console.log("Hi!");
+}, 2000);
+
+// Cancel the execution of the callback function
+clearTimeout(timerId);
+```
+
+<br>
+
+[Back to top](#faqs)
+</details>
+
+
+
+
+
+<details>
+  <summary>How to use <code>setInterval()</code> and <code>clearIntervalI()</code>?</summary>
+  <br>
+
+`setInterval()` is a global function that can be used to execute a callback function repeatedly at a specified interval.
+
+<br>
+
+##### Syntax:
+
+```js
+setTimeout(callback, delay);
+```
+
+- `callback` is the function that will be executed after the specified delay.
+- `delay` is the time in milliseconds that the callback function should be delayed before being executed.
+
+<br>
+
+##### Using `setInterval()`
+
+Here is an example of using `setTimeout()` to log a message to the console after a delay of 2000 milliseconds (2 seconds):
+
+```js
+setInterval(() => {
+  console.log("Hello, world!");
+}, 2000);
+```
+
+
+
+##### Canceling an interval with `clearInterval()`
+
+When invoked, `setInterval()` returns a timer ID that can be used to cancel the execution of the callback function using the `clearInterval()` function:
+
+```js
+const timerId = setInterval(() => {
+  console.log("Hello, world!");
+}, 2000);
+
+
+// Cancel the execution of the interval function after 10 seconds
+setTimeout(() => {
+  clearInterval(timerId);
+}, 10000);
+```
+
+<br>
+
+[Back to top](#faqs)
+</details>
+
+
+
+<details>
+  <summary>What is the proper way to pass a callback function as an argument and execute it?</summary>
+  <br>
+
+In JavaScript, you can pass a callback function as an argument to another function and execute it by calling it inside the outer function. 
+
+<br>
+
+Here is an example of **passing a callback as an argument to a function**: 
+
+```js
+function sayHello() {
+  console.log('Hello!!!');
+}
+
+
+function outerFunction(callback) {
+  console.log('Inside outerFunction');
+  
+  callback();
+}
+
+
+outerFunction(sayHello);
+```
+
+In this example, the `sayHello` function is passed as a callback to the `outerFunction`. The `outerFunction` calls the passed function using it's parameter name `callback`  by invoking it with `callback()`. When you run the code, you will see the log statements from both functions printed to the console.
+
+<br>
+
+
+
+Here is an example of **passing a callback as an argument to a method**: 
+
+```js
+class ExampleClass {
+  constructor() {
+    this.name = "ExampleClass";
+  }
+
+  myMethod(callback) {
+    console.log("Inside myMethod");
+    
+    callback();
+  }
+  
+}
+```
+
+<br>
+
+
+
+Here is an example of **passing a callback to a method and checking if it was passed** before invoking it:
+
+```js
+class ExampleClass {
+  constructor() {
+    this.name = "ExampleClass";
+  }
+
+  myMethod(callback) {
+    console.log("Inside myMethod");
+    
+    if (callback) { // Check if the callback is passed before invoking it to prevent errors
+      callback(); 
+    }
+    
+  }
+}
+```
+
+In the above example, the method `myMethod` takes a *callback* function as an argument. Inside the method, it first checks if a callback function was actually passed using an if statement. If a callback was passed, the method invokes it by calling `callback()`.
+
+This approach prevents errors from occurring if the callback was not passed (if it is `undefined`).
+
+<br>
+
+
+
+  [Back to top](#faqs)
+</details>
+
+
+
+<details>
+  <summary>I am unable to push changes to the repository. What should I do?</summary>
+  <br>
+
+
+  There are a couple of possible reasons why you may be unable to *push* changes to a Git repository:
+
+1. **You have not committed your changes:** Before you can push your changes to the repository, you need to commit them using the `git commit` command. Make sure you have committed your changes and try pushing again. To do this, run the following terminal commands from the project folder:
+
+   ```bash
+   git add .
+   git commit -m "Your commit message"
+   git push
+   ```
+
+
+2. **You do not have permission to push to the repository:** If you have cloned the repository directly from the main Ironhack repository without making a *Fork* first, you do not have write access to the repository.
+   To check which remote repository you have cloned, run the following terminal command from the project folder:
+
+   ```bash
+   git remote -v
+   ```
+
+If the link shown is the same as the main Ironhack repository, you will need to fork the repository to your Github account first, and then clone your fork to your local machine to be able to push the changes.
+
+Note: You may want to make a copy of the code your have locally, to avoid losing it in the process.
+
+  [Back to top](#faqs)
+</details>
 
