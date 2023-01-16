@@ -1,10 +1,14 @@
 class Chronometer {
   constructor() {
     // ... your code goes here
+    this.currentTime = 0;
+    this.intervalId = null;
   }
 
   start(printTimeCallback) {
     // ... your code goes here
+    this.currentTime++;
+    setInterval(() => (this.currentTime = 3), 3000);
   }
 
   getMinutes() {
