@@ -85,3 +85,4 @@ btnRight.addEventListener('click', () => {
     printSplit();
   }
 });
+
