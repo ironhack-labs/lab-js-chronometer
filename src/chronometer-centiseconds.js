@@ -42,6 +42,6 @@ class Chronometer {
     const minutes = this.computeTwoDigitNumber(this.getMinutes());
     const seconds = this.computeTwoDigitNumber(this.getSeconds());
     const centiseconds = this.computeTwoDigitNumber(this.getCentiseconds());
-    return `${minutes}:${seconds}:${centiseconds}`;
+    return `${minutes}:${seconds}.${centiseconds}`;
   }
 }
