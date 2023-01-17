@@ -1,3 +1,19 @@
+class Chronometer {
+  constructor(){
+    this.currentTime = 0
+    this.intervalId = null
+  }
+
+  start(printTimeCallBack){
+    return printTimeCallBack += this.currentTime
+   const time = setInterval (() => {
+      this.currentTime += 1
+    }, 1000);
+    return printTimeCallBack 
+  }
+}
+
+
 const chronometer = new Chronometer();
 
 const btnLeft = document.getElementById('btnLeft');
