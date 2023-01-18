@@ -12,11 +12,11 @@ should invoke the passed argument (printTimeCallback) every 1 second
 should increment the currentTime property to 3 after 3 seconds */
 
     this.intervalId = setInterval(() => {
-      if(printTimeCallback){
-       return  printTimeCallback();
-      }
       this.currentTime++;
-      },1000)
+      if(printTimeCallback){
+        return  printTimeCallback();
+      }
+    },1000)
  }
 
   
@@ -40,7 +40,7 @@ should return a number
 should return 0 when the currentTime counting haven't started
 should return the seconds of the currentTime
 should return the seconds portion of the currentTime that remains after removing the minutes*/
-  let seconds = Math.floor(this.currentTime % 60);
+  let seconds = this.currentTime % 60;
   return seconds;
 
   }
