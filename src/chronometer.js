@@ -35,7 +35,6 @@ class Chronometer {
   }
 
   split() {
-    console.log('HERE')
     const minutes = this.computeTwoDigitNumber(this.getMinutes());
     const seconds = this.computeTwoDigitNumber(this.getSeconds());
 
