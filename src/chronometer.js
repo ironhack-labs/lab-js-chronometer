@@ -15,11 +15,12 @@ class Chronometer {
   }
 
   getMinutes() {
-    // ... your code goes here
+    let minutes = this.currentTime / 60
+    return Math.round(minutes);
   }
 
   getSeconds() {
-    // ... your code goes here
+    return this.currentTime % 60
   }
 
   computeTwoDigitNumber(value) {
