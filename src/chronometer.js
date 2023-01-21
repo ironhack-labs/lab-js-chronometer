@@ -9,12 +9,12 @@ class Chronometer {
       this.currentTime++;
       if (printTimeCallback) printTimeCallback();
     }, 1000);
-    
+
     this.intervalId = startInterval;
   }
 
   getMinutes() {
-    // ... your code goes here
+    return Math.floor(this.currentTime / 60);
   }
 
   getSeconds() {
