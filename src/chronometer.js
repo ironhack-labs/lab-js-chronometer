@@ -47,3 +47,4 @@ class Chronometer {
     return `${minutes2Dig}:${seconds2Dig}`
   }
 }
+
