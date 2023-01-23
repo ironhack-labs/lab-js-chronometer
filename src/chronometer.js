@@ -15,10 +15,8 @@ class Chronometer {
       
     }, 1000)
 
-    /* setInterval(printTimeCallback, 1000) */
+  
 
-    
-    
   }
 
   getMinutes() {
