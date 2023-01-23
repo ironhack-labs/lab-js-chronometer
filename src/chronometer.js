@@ -27,12 +27,13 @@ getSeconds() {
 
 getCentiseconds() {
   // ... your code goes here
+  return Math.floor(this.currentTime % )
 }
 
 computeTwoDigitNumber(value) {
   // ... your code goes here
-  if(value > 10) return `${value}`
   if(value < 10) return `0${value}`
+  else return `${value}`
 }
 
 stop() {
@@ -47,5 +48,12 @@ reset() {
 
 split() {
   // ... your code goes here
+  let minutes = this.getMinutes();
+  let seconds = this.getSeconds();
+
+  let minutesTwoDigits = this.computeTwoDigitNumber(minutes);
+  let secondsTwoDigits = this.computeTwoDigitNumber(seconds);
+  
+  return `${minutesTwoDigits}:${secondsTwoDigits}`;
 }
 }
