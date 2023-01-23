@@ -1,11 +1,13 @@
 class Chronometer {
+    // ... your code goes here
   constructor() {
     // ... your code goes here
+
   }
 
   start(printTimeCallback) {
-    // ... your code goes here
-  }
+     // ... your code goes here
+  }; 
 
   getMinutes() {
     // ... your code goes here
