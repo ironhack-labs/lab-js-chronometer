@@ -83,5 +83,6 @@ btnRight.addEventListener('click', () => {
     printTime();
   } else {
     printSplit();
+    
   }
 });
