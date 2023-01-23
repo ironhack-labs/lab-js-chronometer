@@ -7,7 +7,7 @@ constructor() {
 }
 
 start(printTimeCallback) {
-  let intervalId = setInterval (() => {
+  this.intervalId = setInterval (() => {
     this.currentTime++
     if (printTimeCallback){
       printTimeCallback()
@@ -31,8 +31,8 @@ getCentiseconds() {
 
 computeTwoDigitNumber(value) {
   // ... your code goes here
-  if(value < 10) return `0${value}`
   if(value > 10) return `${value}`
+  if(value < 10) return `0${value}`
 }
 
 stop() {
