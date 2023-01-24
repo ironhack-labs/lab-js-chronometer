@@ -1,37 +1,58 @@
 class Chronometer {
   constructor() {
-    // ... your code goes here
+    this.currentTime = 0
+    this.intervalId = null
   }
 
   start(printTimeCallback) {
-    // ... your code goes here
+    this.intervalId = setInterval(() => {
+      this.currentTime++
+      if (printTimeCallback) {
+        printTimeCallback()
+      }
+      }, 10)
   }
 
   getMinutes() {
-    // ... your code goes here
+    const centiseconds = Math.floor(this.currentTime % 100)
+    const now = Math.floor((this.currentTime - centiseconds) / 100)
+    const seconds = Math.floor(now % 60)
+    return Math.floor((now - seconds) /60)
   }
 
   getSeconds() {
-    // ... your code goes here
+    const centiseconds = Math.floor(this.currentTime % 100)
+    const now = this.currentTime = Math.floor((this.currentTime - centiseconds) / 100)
+    return Math.floor(now % 60)
   }
 
   getCentiseconds() {
-    // ... your code goes here
+    return Math.floor(this.currentTime % 100)
   }
 
   computeTwoDigitNumber(value) {
-    // ... your code goes here
+    return ("0" + value).slice(-2)
   }
 
   stop() {
-    // ... your code goes here
+    clearInterval(this.intervalId)
   }
 
   reset() {
-    // ... your code goes here
+    this.currentTime = 0
   }
 
-  split() {
-    // ... your code goes here
+  split() {//It works!! But it doesn't work with checker...why??
+    const centiseconds = Math.floor(this.currentTime % 100)
+    const now = Math.floor((this.currentTime - centiseconds) / 100)
+    const seconds = Math.floor(now % 60)
+    const minutes = Math.floor((now - seconds) / 60)
+    let c = this.computeTwoDigitNumber(centiseconds)
+    let s = this.computeTwoDigitNumber(seconds)
+    let m = this.computeTwoDigitNumber(minutes)
+  
+    return `${m}:${s}:${c}`
   }
 }
+//let chrono = new Chronometer()
+//console.log(chrono.split())
