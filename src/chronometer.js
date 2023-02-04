@@ -33,7 +33,7 @@ class Chronometer {
   }
 
   stop() {
-   clearInterval(this.currentTime)
+   clearInterval(this.intervalId)
   } 
 
   reset() {
