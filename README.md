@@ -173,7 +173,7 @@ We'll use the `computeTwoDigitNumber` method in the following iterations to form
 
 <br>
 
-### Iteration 6: The `stop` method
+  ### Iteration 6: The `stop` method
 
 ##### `stop()` method
 
