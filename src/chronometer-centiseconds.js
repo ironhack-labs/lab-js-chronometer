@@ -38,7 +38,12 @@ class Chronometer {
   }
 
   computeTwoDigitNumber(value) {
-    // ... your code goes here
+    const numToString = value.toString();
+    if(numToString.length === 1){
+      return `0${numToString}`;
+    }else{
+      return numToString;
+    }
   }
 
   stop() {
