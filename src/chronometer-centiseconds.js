@@ -16,7 +16,7 @@ class Chronometer {
   getMinutes() {
     if(this.currentTime === 0){
       return 0;
-    }else{
+    }else{  
       return Math.floor(this.currentTime / 6000);
     }
   }
@@ -25,7 +25,7 @@ class Chronometer {
     if(this.currentTime === 0){
       return 0;
     }else{
-      return Math.floor(this.currentTime / 100);
+      return Math.floor((this.currentTime / 100) % 60);
     }
   }
 
