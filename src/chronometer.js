@@ -4,7 +4,7 @@ class Chronometer {
     // ... your code goes here
     this.currentTime = 0;
     this.intervalId = null;
-    let intervalId
+    
     
   }
 
@@ -51,4 +51,6 @@ class Chronometer {
     let splitTime = `${this.computeTwoDigitNumber(this.getMinutes())}:${this.computeTwoDigitNumber(this.getSeconds())}`
     return splitTime
   }
+
+
 }
