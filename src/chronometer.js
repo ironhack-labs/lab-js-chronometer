@@ -22,15 +22,10 @@ class Chronometer {
 	}
 
 	computeTwoDigitNumber(value) {
-		let newArray = [];
-
 		if (value < 10) {
-			newArray.push(0);
-			newArray.push(value);
-			return newArray.join('');
+			return '0' + value;
 		} else {
-			newArray.push(value);
-			return newArray.join();
+			return value.toString();
 		}
 	}
 
