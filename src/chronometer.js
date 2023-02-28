@@ -43,7 +43,13 @@ class Chronometer {
 	}
 
 	split() {
-		// ... your code goes here
+		let minutes = this.computeTwoDigitNumber(this.getMinutes());
+
+		let seconds = this.computeTwoDigitNumber(this.getSeconds());
+
+		let result = [minutes, seconds].join();
+
+		return result.replace(',', ':');
 	}
 }
 
