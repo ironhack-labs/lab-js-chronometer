@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)http://127.0.0.1:5500/lab-js-chronometer/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JS Chronometer</title>
+  <link rel="stylesheet" href="./JS Chronometer_files/style.css">
+</head>
+<body>
+
+  <section id="splits-container">
+    <h3>Splits</h3>
+    <ol id="splits">
+    </ol>
+  </section>
+
+  <div class="leash leash-top"></div>
+
+  <section id="clock">
+    <div id="sphere">
+      <span id="minDec" class="number">0</span><span id="minUni" class="number">0</span><span>:</span><span id="secDec" class="number">0</span><span id="secUni" class="number">0</span>
+
+      <div id="centiseconds">
+        <span id="centisecDec">0</span><span id="centisecUni">0</span>
+      </div>
+
+      <button id="btnLeft" class="btn start">START</button> <button id="btnRight" class="btn reset">RESET</button>
+    </div>
+  </section>
+
+  <div class="leash leash-bottom">
+    <div class="hole"></div>
+    <div class="hole"></div>
+    <div class="hole"></div>
+  </div>
+
+
+
+  <!--  Iterations 1 - 8 -->
+  <script src="./JS Chronometer_files/chronometer.js.transferir"></script>
+
+  <!-- Bonus Iteration 9: Centiseconds -->
+  <!-- <script src="src/chronometer-centiseconds.js"></script> -->
+
+  
+  <!--  DOM manipulation logic -->
+  <script src="./JS Chronometer_files/index.js.transferir"></script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>
