@@ -22,18 +22,29 @@ class Chronometer {
 	}
 
 	computeTwoDigitNumber(value) {
-		// ... your code goes here
+		let newArray = [];
+
+		if (value < 10) {
+			newArray.push(0);
+			newArray.push(value);
+			return newArray.join('');
+		} else {
+			newArray.push(value);
+			return newArray.join();
+		}
 	}
 
 	stop() {
-		// ... your code goes here
+		clearInterval(this.intervalId);
 	}
 
 	reset() {
-		// ... your code goes here
+		this.currentTime = 0;
 	}
 
 	split() {
 		// ... your code goes here
 	}
 }
+
+let chrono = new Chronometer();
