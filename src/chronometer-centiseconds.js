@@ -51,7 +51,7 @@ class Chronometer {
 		let result = [minutes, seconds, centiseconds].join();
 
 		let betterResult = result.replace(',', ':');
-		return betterResult.replace(',', ':');
+		return betterResult.replace(',', '.');
 	}
 }
 let chrono = new Chronometer();
