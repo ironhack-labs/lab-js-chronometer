@@ -19,11 +19,11 @@ class Chronometer {
   }
 
   getSeconds() {
-    return this.currentTime %60
+    return this.currentTime % 60
   }
 
   computeTwoDigitNumber(value) {
-    // ... your code goes here
+    return value.toString().padStart(2, '0')
   }
 
   stop() {
