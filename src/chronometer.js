@@ -5,17 +5,16 @@ class Chronometer {
   }
 
   start(printTimeCallback) {
-    setInterval(()=>{
+    setInterval(() => {
       this.currentTime++;
       if (printTimeCallback){
         printTimeCallback()
-      }else{}
+      }else {}
     },1000)
   }
 
   getMinutes() {
-    let numberSec = this.currentTime
-    return Math.floor(numberSec / 60)
+    return Math.floor(this.currentTime / 60)
   }
 
   getSeconds() {
@@ -23,20 +22,26 @@ class Chronometer {
   }
 
   computeTwoDigitNumber(value) {
-    return value.toString().padStart(2, '0')
+
+    // return value.toString().padStart(2, '0')
+
+    if (value > 10) {
+      return String(value)
+    } else {
+      return "0" + String(value)
+    }
   }
 
   stop() {
-    const baba=setInterval()
-  
-     clearInterval(baba)
+    clearInterval(this.currentTime)
   }
 
   reset() {
-    // ... your code goes here
+    this.currentTime = 0
   }
 
   split() {
-    // ... your code goes here
+    let validFormat = `${this.computeTwoDigitNumber(this.getMinutes())}:${this.computeTwoDigitNumber(this.getSeconds())}`
+    return validFormat
   }
 }
