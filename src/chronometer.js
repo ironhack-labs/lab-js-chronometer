@@ -6,19 +6,16 @@ class Chronometer {
 
   start(printTimeCallback) {
     setInterval(() => {
-      this.currentTime += 1
-      if(printTimeCallback){
-        printTimeCallback()
+      this.currentTime += 1;
+      if (printTimeCallback) {
+        printTimeCallback();
       }
       //printTimeCallback && printTimeCallback()
-
-      
-    },1000)
-    
+    }, 1000);
   }
 
   getMinutes() {
-    // ... your code goes here
+    return Math.floor(this.currentTime / 60);
   }
 
   getSeconds() {
