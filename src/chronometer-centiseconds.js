@@ -18,14 +18,14 @@ class Chronometer {
   }
 
   getSeconds() {
-    return (this.currentTime / 100) % 60;
+    return Math.floor((this.currentTime / 100) % 60);
   }
 
   getCentiseconds() {
     if (this.currentTime === 0) {
       return 0;
     }
-    return Math.floor((this.currentTime % 6000) % 100);
+    return Math.floor(this.currentTime % 100);
   }
 
   computeTwoDigitNumber(value) {
