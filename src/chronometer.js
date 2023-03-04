@@ -27,7 +27,9 @@ class Chronometer {
   }
 
   stop() {
-    // ... your code goes here
+    const baba=setInterval()
+  
+     clearInterval(baba)
   }
 
   reset() {
