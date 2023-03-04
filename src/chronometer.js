@@ -18,8 +18,13 @@ class Chronometer {
   }
 
   getMinutes() {
-    // ... your code goes here
-  }
+    if(this.currentTime === 0) {
+     return 0;
+    } else {
+      return Math.floor(this.currentTime/60)
+
+      
+  }}
 
   getSeconds() {
     // ... your code goes here
