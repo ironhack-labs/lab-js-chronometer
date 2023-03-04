@@ -27,15 +27,16 @@ class Chronometer {
   }
 
   stop() {
-    clearInterval(this.intervalId)
-    
+    clearInterval(this.intervalId);
   }
 
   reset() {
-    this.currentTime = 0
+    this.currentTime = 0;
   }
 
   split() {
-    // ... your code goes here
+    return `${this.computeTwoDigitNumber(
+      this.getMinutes()
+    )}:${this.computeTwoDigitNumber(this.getSeconds())}`;
   }
 }
