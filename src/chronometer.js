@@ -5,38 +5,36 @@ class Chronometer {
   }
 
   start(printTimeCallback) {
-    const counter = setInterval(() => {
+    setInterval((intervalId) => {
       if (printTimeCallback) {
-        printTimeCallback()
+        printTimeCallback();
       }
-      this.currentTime++
-    }, 1000)
+      this.currentTime++;
+    }, 1000);
   }
 
   getMinutes() {
-    const minutes = this.currentTime / 60
-    return Math.floor(minutes)
+    const minutes = this.currentTime / 60;
+    return Math.floor(minutes);
   }
 
-
-  getSeconds() { 
-       const seconds = this.currentTime % 60
-       return seconds
+  getSeconds() {
+    const seconds = this.currentTime % 60;
+    return seconds;
   }
-
-   
 
   computeTwoDigitNumber(value) {
-    
-   
+    if (value >= 10) {
+      return value.toString();
+    } else return `0${value}`;
   }
 
   stop() {
-    // ... your code goes here
+    clearInterval(this.intervalId);
   }
 
   reset() {
-    // ... your code goes here
+    this.currentTime = 0;
   }
 
   split() {
