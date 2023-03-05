@@ -39,3 +39,4 @@ class Chronometer {
     )}:${this.computeTwoDigitNumber(this.getSeconds())}`;
   }
 }
+
