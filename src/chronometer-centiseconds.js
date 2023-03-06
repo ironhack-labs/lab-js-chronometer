@@ -5,9 +5,16 @@ class Chronometer {
   }
 
   start(printTimeCallback) {
-    this.intervalId = setInterval((printTimeCallback) => {
-      this.currentTime++;
-    }, 10);
+    if (printTimeCallback) {
+      this.intervalId = setInterval(() => {
+        this.currentTime++;
+        printTimeCallback(this.currentTime);
+      }, 10);
+    } else {
+      this.intervalId = setInterval(() => {
+        this.currentTime++;
+      }, 10);
+    }
   }
 
   getMinutes() {
