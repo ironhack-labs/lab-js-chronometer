@@ -9,7 +9,7 @@
    <h2>Learning Goals</h2>
   </summary>
 
-  This exercise is designed to allow you practice and apply the concepts and techniques taught in class. 
+  This exercise allows you to practice and apply the concepts and techniques taught in class. 
 
   Upon completion of this exercise, you will be able to:
 
@@ -21,7 +21,7 @@
   - Use the `setInterval()` to repeatedly run code at specified intervals and `clearInterval()` to cancel existing interval processes.
   - Use the clearInterval() method to stop an interval timer.
   - Debug and troubleshoot code using the Chrome Dev Tools.
-  - Use `Math` object and its methods `Math.random()` for generating random numbers, and `Math.floor()`, `Math.ceil()`, or `Math.round()` for rounding numbers.
+  - Use the `Math` object and its methods `Math.random()` for generating random numbers, and `Math.floor()`, `Math.ceil()`, or `Math.round()` for rounding numbers.
 
   <br>
   <hr> 
@@ -46,9 +46,9 @@ Let's get started!
 - Upon completion, run the following commands:
 
 ```shell
-$ git add .
-$ git commit -m "Solved lab"
-$ git push origin master
+git add .
+git commit -m "Solved lab"
+git push origin master
 ```
 
 - Create a Pull Request so that your TAs can check your work.
@@ -75,7 +75,7 @@ To check how the final version of the chronometer should work, check this **[dem
 
 To let you focus on the JavaScript portion of the exercise and on developing the chronometer functionality, we created the *stopwatch* UI for you.
 
-To start, **open the `index.html` page in the browser**. You should see the *stopwatch* as shown in the below example.  This way, you can visually check the functionality of your chronometer as you progress with the exercise.
+To start, **open the `index.html` page in the browser**. Next, you should see the *stopwatch* as shown in the below example.  This way, you can visually check the functionality of your chronometer as you progress with the exercise.
 
 <details>
   <summary> Click here to see the image</summary>
@@ -87,7 +87,7 @@ To start, **open the `index.html` page in the browser**. You should see the *sto
 
 <br>
 
-The *stopwatch* markup, styles, and DOM functionality are located in the files `styles/style.css`, `index.html`, and `src/index.js`. These files already include all the needed code, and **you should not modify them**.
+The *stopwatch* markup, styles, and DOM functionality are in the files `styles/style.css`, `index.html`, and `src/index.js`. These files already include all the needed code, and **you should not modify them**.
 
 <br>
 
@@ -151,9 +151,9 @@ If `printTimeCallback` is not passed, it should be disregarded (hint: you should
 - should not receive any arguments
 - should return the number of entire *minutes* passed
 
-We're storing the number of seconds elapsed in the `currentTime` property. However, we will need to calculate how many minutes have elapsed.
+We're storing the number of seconds elapsed in the `currentTime` property. First, however, we will need to calculate how many minutes have elapsed.
 
-The `getMinutes` method should take no arguments, and it should return the _number_ of minutes that have passed as an integer, as a whole number.
+The `getMinutes` method should take no arguments and return the _number_ of minutes that have passed as an integer, as a whole number.
 To calculate the minutes, divide the current time by 60 and use the `Math.floor()` method to get a rounded number.
 
 <br>
@@ -313,10 +313,10 @@ You'll use different tests and a different working file for this iteration. To d
   <br>
 
 
-  If you are stuck in your code and don't know how to solve the problem or where to start, you should take a step back and try to form a clear question about the specific issue you are facing. This will help you narrow down the problem and come up with potential solutions.
+  If you are stuck in your code and don't know how to solve the problem or where to start, you should take a step back and try to form a clear question about the specific issue you are facing. This will help you narrow down the problem and develop potential solutions.
 
 
-  For example, is it a concept that you don't understand, or are you receiving an error message that you don't know how to fix? It is usually helpful to try to state the problem as clearly as possible, including any error messages you are receiving. This can help you communicate the issue to others and potentially get help from classmates or online resources. 
+  For example, is it a concept you don't understand, or are you receiving an error message you don't know how to fix? It is usually helpful to try to state the problem as clearly as possible, including any error messages you are receiving. This can help you communicate the issue to others and potentially get help from classmates or online resources. 
 
 
   Once you have a clear understanding of the problem, you will be able to start working toward the solution.
@@ -522,28 +522,23 @@ You'll use different tests and a different working file for this iteration. To d
   <summary>I am unable to push changes to the repository. What should I do?</summary>
   <br>
 
-  There are a couple of possible reasons why you may be unable to *push* changes to a Git repository:
+There are a couple of possible reasons why you may be unable to *push* changes to a Git repository:
 
-   1. **You have not committed your changes:** Before you can push your changes to the repository, you need to commit them using the `git commit` command. Make sure you have committed your changes and try pushing again. To do this, run the following terminal commands from the project folder:
+1. **You have not committed your changes:** Before you can push your changes to the repository, you need to commit them using the `git commit` command. Make sure you have committed your changes and try pushing again. To do this, run the following terminal commands from the project folder:
+  ```bash
+  git add .
+  git commit -m "Your commit message"
+  git push
+  ```
+2. **You do not have permission to push to the repository:** If you have cloned the repository directly from the main Ironhack repository without making a *Fork* first, you do not have write access to the repository.
+To check which remote repository you have cloned, run the following terminal command from the project folder:
+  ```bash
+  git remote -v
+  ```
+If the link shown is the same as the main Ironhack repository, you will need to fork the repository to your GitHub account first and then clone your fork to your local machine to be able to push the changes.
 
-   ```bash
-   git add .
-   git commit -m "Your commit message"
-   git push
-   ```
-
-
-   2. **You do not have permission to push to the repository:** If you have cloned the repository directly from the main Ironhack repository without making a *Fork* first, you do not have write access to the repository.
-   To check which remote repository you have cloned, run the following terminal command from the project folder:
-
-   ```bash
-   git remote -v
-   ```
-
-  If the link shown is the same as the main Ironhack repository, you will need to fork the repository to your GitHub account first, and then clone your fork to your local machine to be able to push the changes.
-
-  Note: You may want to make a copy of the code you have locally, to avoid losing it in the process.
+**Note**: You should make a copy of your local code to avoid losing it in the process.
 
   [Back to top](#faqs)
-  
+
 </details>
