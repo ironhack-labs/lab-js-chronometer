@@ -11,27 +11,35 @@ class Chronometer {
       if (printTimeCallback) {
         printTimeCallback();
       }
-    }, 1000)
+    }, 10)
   }
 
   getMinutes() {
-    return Math.floor(this.currentTime / 60)
+    return Math.floor(this.currentTime / 6000)
   }
 
   getSeconds() {
-    return this.currentTime % 60;
+    return Math.floor(this.currentTime % 6000 /100);
+  }
+
+  getCentiseconds() {
+    return this.currentTime % 100;
   }
 
 
-
   computeTwoDigitNumber(value) {
-    this.numToStr = `${value}`
-    if (this.numToStr.length === 2) {
-      return this.numToStr;
+    // this.numToStr = `${value}`
+    // if (this.numToStr.length === 2) {
+    //   return this.numToStr;
+    // }
+    // else {
+    //   return `0${this.numToStr}`
+    // }
+    // better way::
+    if (value >= 10) {
+      return value.toString();
     }
-    else {
-      return `0${this.numToStr}`
-    }
+    return '0' + value
   }
 
   stop() {
@@ -43,6 +51,6 @@ class Chronometer {
   }
 
   split() {
-    return `${this.computeTwoDigitNumber(this.getMinutes())}:${this.computeTwoDigitNumber(this.getSeconds())}`
+    return `${this.computeTwoDigitNumber(this.getMinutes())}:${this.computeTwoDigitNumber(this.getSeconds())}.${this.computeTwoDigitNumber(this.getCentiseconds())}`
   }
 }
