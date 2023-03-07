@@ -4,6 +4,30 @@
 
 ![giphy (1)](https://user-images.githubusercontent.com/76580/167427065-a674fb55-44ea-448a-a7ef-940b45eeb9df.gif)
 
+<details>
+  <summary>
+   <h2>Learning Goals</h2>
+  </summary>
+
+  This exercise is designed to allow you practice and apply the concepts and techniques taught in class. 
+
+  Upon completion of this exercise, you will be able to:
+
+  - Run tests in Jasmine and interpret results to verify expected code behavior.
+  - Define a `class` and use it to create objects (instances).
+  - Define and implement class methods that use `this` to access and manipulate object properties.
+  - Use arrow functions to maintain the context of `this`.
+  - Pass functions as arguments to other functions (callbacks).
+  - Use the `setInterval()` to repeatedly run code at specified intervals and `clearInterval()` to cancel existing interval processes.
+  - Use the clearInterval() method to stop an interval timer.
+  - Debug and troubleshoot code using the Chrome Dev Tools.
+  - Use `Math` object and its methods `Math.random()` for generating random numbers, and `Math.floor()`, `Math.ceil()`, or `Math.round()` for rounding numbers.
+
+  <br>
+  <hr> 
+
+</details>
+
 ## Introduction
 
 In this lab, we are going to create a [chronometer](https://www.dictionary.com/browse/chronometer). Chronometers are very commonly used in sports - car racing, athletics, etc. We will use classes to organize and abstract our code and the JavaScript timers to implement the chronometer functionality. This is a perfect opportunity to sharpen our OOP skills and practice working with asynchronous JavaScript.
