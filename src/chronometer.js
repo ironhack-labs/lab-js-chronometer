@@ -22,11 +22,15 @@ class Chronometer {
 
   computeTwoDigitNumber(value) {
     // ... your code goes here
+    value = `${value}`
     if (value.length === 1) {
       return `0${value}`
-    } else {
-      return value
+    } else if (value.length === 0)
+      { return "0" + "0"
     }
+      else if (value.length === 2) {
+        return value
+      }
   }
 
   stop() {
