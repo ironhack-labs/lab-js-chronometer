@@ -17,7 +17,7 @@ class Chronometer {
   }
 
   getSeconds() {
-    return this.currentTime % 60;
+    return Math.floor(this.currentTime % 60);
   }
 
   computeTwoDigitNumber(value) {
