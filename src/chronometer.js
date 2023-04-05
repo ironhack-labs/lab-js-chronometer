@@ -6,7 +6,7 @@ class Chronometer {
 
   start(printTimeCallback) {
 
-    if (typeof printTimeCallback !== "function") {
+    if (!printTimeCallback) {
       printTimeCallback = () => {};
     }
 
