@@ -1,37 +1,58 @@
 class Chronometer {
   constructor() {
-    // ... your code goes here
+    this.currentTime = 0;
+    this.intervalId = null;
   }
 
   start(printTimeCallback) {
-    // ... your code goes here
+    this.intervalId = setInterval(() => {
+      this.currentTime++;
+      if (printTimeCallback) {
+        printTimeCallback();
+      }
+    }, 10);
   }
 
   getMinutes() {
-    // ... your code goes here
+    const minutes = Math.floor(this.currentTime / 6000);
+    return minutes;
   }
 
   getSeconds() {
-    // ... your code goes here
+    // const seconds = Math.floor(this.currentTime % 6000);
+    // return Math.floor(Date.now() / 6000)
+    return Math.floor(this.currentTime / 100) % 60; //because you want the number between 0 and 60 (60 seconds)
   }
 
   getCentiseconds() {
-    // ... your code goes here
+    return this.currentTime % 100; //centi goes from 1 to 100, i just change the interval
   }
 
   computeTwoDigitNumber(value) {
-    // ... your code goes here
+    let num = "  ";
+
+    if (value < 10) {
+      return "0" + value.toString();
+    } else {
+      return value.toString(); //it converts it to a format 00 which is then needed in the split.
+    }
   }
 
   stop() {
-    // ... your code goes here
+    clearInterval(this.intervalId);
   }
 
   reset() {
-    // ... your code goes here
+    this.currentTime = 0;
   }
 
   split() {
-    // ... your code goes here
+    return (
+      this.computeTwoDigitNumber(this.getMinutes()) +
+      ":" +
+      this.computeTwoDigitNumber(this.getSeconds()) +
+      "." +
+      this.computeTwoDigitNumber(this.getCentiseconds())
+    );
   }
 }
