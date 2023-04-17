@@ -1,4 +1,4 @@
-class Chronometer {
+45class Chronometer {
   constructor() {
     // ... your code goes here
   }
