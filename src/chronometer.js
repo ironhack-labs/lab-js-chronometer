@@ -43,8 +43,4 @@ class Chronometer {
       this.getMinutes()
     )}:${this.computeTwoDigitNumber(this.getSeconds())}`;
   }
-
-  getCentiSeconds() {
-    return this.currentTime % 6000;
-  }
 }
