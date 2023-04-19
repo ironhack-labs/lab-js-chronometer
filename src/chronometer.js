@@ -14,6 +14,7 @@ class Chronometer {
 
     this.intervalId = setInterval(() => {
       this.currentTime++
+      if (printTimeCallback) printTimeCallback()
     }, 1000);
     
   }
@@ -39,6 +40,8 @@ class Chronometer {
       return stringValue;
     }
   }
+
+  
 
   stop() {
     // ... your code goes here
