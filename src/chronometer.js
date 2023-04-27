@@ -7,32 +7,25 @@ class Chronometer {
   start(printTimeCallback) {
     this.intervalId = setInterval(() => {
       this.currentTime ++;
+      if (printTimeCallback) printTimeCallback();
     }, 1000);
    
-    return printTimeCallback;
   }
-    //for (this.currentTime = 0; this.currentTime < 1000; i++);
   //hay que ponerle que cada vez que se muestre con el temporizador se incremente en 1
  //elclearInterval se puede ejecutar en un if
 
   getMinutes() {
-    if (this.currentTime === 0) {
-      return 0;
-    } else {
       return Math.floor(this.currentTime / 60);
     }
-  }
-
+  
   getSeconds() {
-    if (this.currentTime === 0){
-      return 0;
-    } else{
       return this.currentTime % 60;
     }
-  }
-
+  
   computeTwoDigitNumber(value) {
-    return value < 10 ? `0${value}` : `${value}`;
+    if (value < 10) {
+      return `0${value}`;
+    } else return `${value}`;
   }
 
   stop() {
@@ -44,6 +37,8 @@ class Chronometer {
   }
 
   split() {
-    // ... your code goes here
+  const minutes = this.computeTwoDigitNumber(this.getMinutes());
+  const seconds = this.computeTwoDigitNumber(this.getSeconds());
+  return `$(minutes);$(seconds)`
   }
 }
