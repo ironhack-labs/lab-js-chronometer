@@ -51,5 +51,7 @@ class Chronometer {
 
   split() {
     // ... your code goes here
+   // document.getElementById("split").innerHTML = -> DOM manipulation
+   return `${this.computeTwoDigitNumber(this.getMinutes())}:${this.computeTwoDigitNumber(this.getSeconds())}`;
   }
 }
