@@ -7,7 +7,10 @@ class Chronometer {
 
   start(printTimeCallback) {
     // ... your code goes here
-    
+    setInterval(() => {
+      if (printTimeCallback) printTimeCallback()
+      this.currentTime += 1
+    }, 1000)
   }
 
   getMinutes() {
