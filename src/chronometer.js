@@ -1,15 +1,25 @@
 class Chronometer {
   constructor() {
-    (this.currentTime = 0), (this.intervalId = null);
+    (this.currentTime = 0), 
+    (this.intervalId = null),
+    (this.hundredths=0),
+    (this.hundredthsIntervalID=null)
   }
 
   start(printTimeCallback) {
     this.intervalId = setInterval(() => {
       this.currentTime++;
-      if (printTimeCallback) {
-        printTimeCallback(this.currentTime);
+      if (printTimeCallback){
+        printTimeCallback(this.currentTime)
       }
     }, 1000);
+
+    this.hundredthsIntervalID=setInterval(() => {
+      this.hundredths++;
+      if (this.hundredths>=100){
+        this.hundredths=0
+      }
+    }, 10);
   }
 
   getMinutes() {
@@ -29,7 +39,7 @@ class Chronometer {
   }
 
   computeTwoDigitNumber(value) {
-    // ... your code goes here
+    return value<10?`0${value}`:`${value}`
   }
 
   stop() {
