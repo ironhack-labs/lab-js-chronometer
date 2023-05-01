@@ -31,7 +31,7 @@ class Chronometer {
   computeTwoDigitNumber(value) {
     // ... your code goes here
      if(value < 10) return '0' + value;
-     return value.toString();
+     return value.toString().padStart(2,'0');
   }
 
   stop() {
