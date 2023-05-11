@@ -13,14 +13,12 @@
 
   Upon completion of this exercise, you will be able to:
 
-  - Run tests in Jasmine and interpret results to verify expected code behavior.
   - Define a `class` and use it to create objects (instances).
   - Define and implement class methods that use `this` to access and manipulate object properties.
   - Use arrow functions to maintain the context of `this`.
   - Pass functions as arguments to other functions (callbacks).
-  - Use the `setInterval()` to repeatedly run code at specified intervals and `clearInterval()` to cancel existing interval processes.
-  - Use the clearInterval() method to stop an interval timer.
-  - Debug and troubleshoot code using the Chrome Dev Tools.
+  - Use the `setInterval()` to repeatedly run code at specified intervals.
+  - Use the `clearInterval()` method to stop an interval timer.
   - Use the `Math` object and its methods `Math.random()` for generating random numbers, and `Math.floor()`, `Math.ceil()`, or `Math.round()` for rounding numbers.
 
   <br>
