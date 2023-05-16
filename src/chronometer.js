@@ -24,18 +24,31 @@ class Chronometer {
   }
 
   computeTwoDigitNumber(value) {
+    let result = "";
+    if (value < 10) {
+      result = `0${value}`;
+    } else {
+      result = `${value}`;
+    }
+    return result;
     // ... your code goes here
   }
 
   stop() {
-    // ... your code goes here
+    clearInterval(this.intervalId);
   }
 
   reset() {
+    this.currentTime = 0;
     // ... your code goes here
   }
 
   split() {
     // ... your code goes here
+    let mm = this.getMinutes();
+    let ss = this.getSeconds();
+    let time =
+      this.computeTwoDigitNumber(mm) + ":" + this.computeTwoDigitNumber(ss);
+    return time;
   }
 }
