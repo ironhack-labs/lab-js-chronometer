@@ -8,9 +8,8 @@ class Chronometer {
   start(printTimeCallback) {
     // ... your code goes here
 
-    setInterval(function (printTimeCallback) {
-      this.currentTime++;
-      return this.currentTime;
+    setInterval(() => {
+      return this.currentTime++;
     }, 1000);
   }
 
