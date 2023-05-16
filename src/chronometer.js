@@ -5,7 +5,7 @@ class Chronometer {
 
   start(printTimeCallback) {
     // ... your code goes here
-  }
+  } 
 
   getMinutes() {
     // ... your code goes here
