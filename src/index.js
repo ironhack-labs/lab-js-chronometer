@@ -1,5 +1,13 @@
 const chronometer = new Chronometer();
 
+class Chronometer {
+  constructor() {
+    this.currentTime = 0;
+    this.intervalId = null;
+  }
+}
+
+
 const btnLeft = document.getElementById('btnLeft');
 const btnRight = document.getElementById('btnRight');
 
