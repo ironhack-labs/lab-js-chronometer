@@ -1,24 +1,3 @@
-class Chronometer {
-  constructor(currentTime, intervalId) {
-    this.currentTime = 0;
-    this.intervalId = null;
-  }
-
-  // start() {}
-
-  // getMinutes() {}
-
-  // getSeconds() {
-  //   return 1;
-  // }
-
-  // computeTwoDigitNumber() {}
-
-  // stop() {}
-
-  // reset() {}
-}
-
 const chronometer = new Chronometer();
 
 const btnLeft = document.getElementById("btnLeft");
