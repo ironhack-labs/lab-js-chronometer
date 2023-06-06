@@ -9,7 +9,7 @@
    <h2>Learning Goals</h2>
   </summary>
 
-  This exercise allows you to practice and apply the concepts and techniques taught in class. 
+  This exercise allows you to practice and apply the concepts and techniques taught in class.
 
   Upon completion of this exercise, you will be able to:
 
@@ -22,7 +22,7 @@
   - Use the `Math` object and its methods `Math.random()` for generating random numbers, and `Math.floor()`, `Math.ceil()`, or `Math.round()` for rounding numbers.
 
   <br>
-  <hr> 
+  <hr>
 
 </details>
 
@@ -100,7 +100,7 @@ The `src/index.js` file depends on the methods of the `Chronometer` to display t
 > ```js
 > // src/index.js
 > const chronometer = new Chronometer(); // instance of the Chronometer
-> 
+>
 > // ...
 > ```
 
@@ -185,7 +185,7 @@ You can use the [modulo operator](https://developer.mozilla.org/en-US/docs/Web/J
 
 Our *stopwatch* has a screen that displays the number of minutes and seconds that passed. However, sometimes the `getMinutes` and `getSeconds` methods return a single-digit number. Let's create a helper function that will convert any number into a two-digits string representation.
 
-The `computeTwoDigitNumber` method should take a `value` argument, a number, and return a string. The received number should be *padded* with 0s when the value is a single-digit number. 
+The `computeTwoDigitNumber` method should take a `value` argument, a number, and return a string. The received number should be *padded* with 0s when the value is a single-digit number.
 
 For example, if `computeTwoDigitNumber` is called with the number `7`, it should return a string `"07"`. If called with the number `36`, it should return a string with the value of `"36"`.
 
@@ -242,7 +242,7 @@ The `split` method should take no arguments, and it should return a string where
 <br>
 
 ![](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_a5c9687f25bd710b2e7658ee6d997174.png)
-    
+
 </details>
 
 <br>
@@ -279,20 +279,20 @@ You'll use different tests and a different working file for this iteration. To d
        <!--  Iterations 1 - 8 -->
        <!-- <script src="src/chronometer.js"></script> -->
        <!-- <script src="tests/chronometer.spec.js"></script> -->
-   
+
        <!-- Bonus Iteration 9: Centiseconds -->
        <script src="src/chronometer-centiseconds.js"></script>
        <script src="tests/chronometer-centiseconds.spec.js"></script>
    ```
 
-   
+
 
 2. In `index.html`, *comment out* the script tag loading the `chronometer.js` file, and *uncomment* the `chronometer-centiseconds.js` one, like this:
 
    ```html
      <!--  Iterations 1 - 8 -->
      <!-- <script src="src/chronometer.js"></script> -->
-   
+
      <!-- Bonus Iteration 9: Centiseconds -->
      <script src="src/chronometer-centiseconds.js"></script>
    ```
@@ -314,7 +314,7 @@ You'll use different tests and a different working file for this iteration. To d
   If you are stuck in your code and don't know how to solve the problem or where to start, you should take a step back and try to form a clear question about the specific issue you are facing. This will help you narrow down the problem and develop potential solutions.
 
 
-  For example, is it a concept you don't understand, or are you receiving an error message you don't know how to fix? It is usually helpful to try to state the problem as clearly as possible, including any error messages you are receiving. This can help you communicate the issue to others and potentially get help from classmates or online resources. 
+  For example, is it a concept you don't understand, or are you receiving an error message you don't know how to fix? It is usually helpful to try to state the problem as clearly as possible, including any error messages you are receiving. This can help you communicate the issue to others and potentially get help from classmates or online resources.
 
 
   Once you have a clear understanding of the problem, you will be able to start working toward the solution.
@@ -442,11 +442,11 @@ You'll use different tests and a different working file for this iteration. To d
   <summary>What is the proper way to pass a callback function as an argument and execute it?</summary>
   <br>
 
-  In JavaScript, you can pass a callback function as an argument to another function and execute it by calling it inside the outer function. 
+  In JavaScript, you can pass a callback function as an argument to another function and execute it by calling it inside the outer function.
 
   <br>
 
-  Here is an example of **passing a callback as an argument to a function**: 
+  Here is an example of **passing a callback as an argument to a function**:
 
   ```js
   function sayHello() {
@@ -456,7 +456,7 @@ You'll use different tests and a different working file for this iteration. To d
 
   function outerFunction(callback) {
     console.log('Inside outerFunction');
-    
+
     callback();
   }
 
@@ -468,7 +468,7 @@ You'll use different tests and a different working file for this iteration. To d
 
   <br>
 
-  Here is an example of **passing a callback as an argument to a method**: 
+  Here is an example of **passing a callback as an argument to a method**:
 
   ```js
   class ExampleClass {
@@ -478,10 +478,10 @@ You'll use different tests and a different working file for this iteration. To d
 
     myMethod(callback) {
       console.log("Inside myMethod");
-      
+
       callback();
     }
-    
+
   }
   ```
 
@@ -497,11 +497,11 @@ You'll use different tests and a different working file for this iteration. To d
 
     myMethod(callback) {
       console.log("Inside myMethod");
-      
+
       if (callback) { // Check if the callback is passed before invoking it to prevent errors
-        callback(); 
+        callback();
       }
-      
+
     }
   }
   ```
