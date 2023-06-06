@@ -53,3 +53,5 @@ class Chronometer {
     return `${min}:${sec}`;
   }
 }
+
+const app = new Chronometer();
