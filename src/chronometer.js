@@ -20,24 +20,22 @@ class Chronometer {
 
   getSeconds() {
     // ... your code goes here
-    const secondsElapsed = this.currentTime % 60
-    return secondsElapsed
+    return this.currentTime % 60
   }
 
   computeTwoDigitNumber(value) {
     // ... your code goes here
-    const padded = ("0" + value).slice(-2) 
-  return padded
+    return ("0" + value).slice(-2) 
   }
 
   stop() {
     // ... your code goes here
-    clearInterval(this.intervalId)
+    return clearInterval(this.intervalId)
   }
 
   reset() {
     // ... your code goes here
-    this.currentTime = 0
+    return this.currentTime = 0
   }
 
   split() {
