@@ -45,8 +45,5 @@ class Chronometer {
     let minutes = this.computeTwoDigitNumber(this.getMinutes());
     let seconds = this.computeTwoDigitNumber(this.getSeconds());
     return `${minutes}:${seconds}`
-    // console.log(typeof this.getMinutes(), this.currentTime, computeTwoDigitNumber(minutes), seconds)
-    // console.log(`${this.getMinutes()}:${ this.getSeconds()}`)
-    // ... your code goes here
   }
 }
