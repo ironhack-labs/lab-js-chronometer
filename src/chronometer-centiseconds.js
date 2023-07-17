@@ -1,6 +1,7 @@
 class Chronometer {
   constructor() {
     // ... your code goes here
+    
   }
 
   start(printTimeCallback) {
