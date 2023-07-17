@@ -1,33 +1,57 @@
 class Chronometer {
   constructor() {
-    // ... your code goes here
+    this.currentTime = 0;
+    this.intervalId = null;
   }
 
   start(printTimeCallback) {
-    // ... your code goes here
+    this.intervalId = setInterval(() => {
+      if (printTimeCallback) {
+        printTimeCallback();
+      }
+      this.currentTime++;
+      console.log(this.currentTime);
+    }, 1000);
   }
 
   getMinutes() {
-    // ... your code goes here
+    return Math.floor(this.currentTime / 60)
   }
 
   getSeconds() {
-    // ... your code goes here
+    return Math.floor(this.currentTime%60)
   }
 
   computeTwoDigitNumber(value) {
-    // ... your code goes here
-  }
+    const stringOfNumbers = String(value);
+    if (stringOfNumbers.length===1){
+     return "0" +stringOfNumbers;
+    }
+    return stringOfNumbers
+   }
+
 
   stop() {
-    // ... your code goes here
+    clearInterval(this.intervalId)
   }
 
+
+
+
   reset() {
-    // ... your code goes here
+   this.currentTime = 0
   }
 
   split() {
-    // ... your code goes here
+  
+
+    const formattedMinutes = this.computeTwoDigitNumber(this.getMinutes());
+    const formattedSeconds = this.computeTwoDigitNumber(this.getSeconds());
+
+    return `${formattedMinutes}:${formattedSeconds}`;
   }
-}
+  }
+
+
+
+  // Note for T.A. : my code is right according to Jasmine but my watch isnt working when i hit the live server
