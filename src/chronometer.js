@@ -25,17 +25,22 @@ class Chronometer {
   }
 
   computeTwoDigitNumber(value) {
+    value = Math.max(0, Math.min(value, 99))
+    const result = value.toString().padStart(2, '0');
+    return result;
   }
 
   stop() {
-    // ... your code goes here
+    clearInterval(this.intervalId)
   }
 
   reset() {
-    // ... your code goes here
+    this.currentTime = 0;
   }
 
   split() {
-    // ... your code goes here
+    const minutes = this.getMinutes();
+    const seconds = this.getSeconds();
+    return `${this.computeTwoDigitNumber(minutes)}:${this.computeTwoDigitNumber(seconds)}`;
   }
 }
