@@ -87,45 +87,45 @@ class Chronometer {
 
 
 
-  // ---------- [NOT DONE] ----------
+  // ---------- [COMPLETED] ----------
 
   computeTwoDigitNumber(value) {
     // ... your code goes here
+
+    const paddedNumber = ("0" + value).slice(-2) //turning a single digit number to a 2 digits number
+
+    return paddedNumber
+
   }
 
-  // ---------- [NOT DONE] ----------
+  // ---------- [COMPLETED] ----------
 
 
 
 
-  // ---------- [IN PROGRESS] ----------
+  // ---------- [COMPLETED] ----------
 
   stop() {
     // ... your code goes here
 
-    const timeoutID = setTimeout(() => {
-
-      if (setTimeout) { // [QUESTION]: didn't understood what this does 
-
-        setTimeout()
-
-      }
-    })
-
+    clearInterval(this.intervalId) // call clearInterval > call this.intervalId = null 
   }
 
-  // ---------- [IN PROGRESS] ----------
+  // ---------- [COMPLETED] ----------
 
 
 
 
-  // ---------- [NOT DONE] ----------
+  // ---------- [COMPLETED] ----------
 
   reset() {
     // ... your code goes here
+
+    this.currentTime = 0
+
   }
 
-  // ---------- [NOT DONE] ----------
+  // ---------- [COMPLETED] ----------
 
 
 
@@ -134,6 +134,17 @@ class Chronometer {
 
   split() {
     // ... your code goes here
+
+    //   const formattedMinutes = getMinutes().toLocaleString
+
+    //   const formattedSeconds = getSeconds().toLocaleString
+
+    //   const formattedSeconds = computeTwoDigitNumber().toLocaleString
+
+    //   return "formattedMinutes formattedSeconds formattedSeconds"
+
+    // }
+
   }
 }
 
