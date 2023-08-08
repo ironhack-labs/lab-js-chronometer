@@ -6,10 +6,10 @@ class Chronometer {
 
     start(printTimeCallback) {
         this.intervalId = setInterval(() => {
+            this.currentTime += 1;
             if (typeof printTimeCallback === "function") {
                 printTimeCallback();
             }
-            this.currentTime += 1;
         }, 1000);
     }
 
