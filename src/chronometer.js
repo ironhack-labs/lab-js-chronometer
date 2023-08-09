@@ -1,33 +1,71 @@
 class Chronometer {
   constructor() {
-    // ... your code goes here
+    this.currentTime = 0;
+    this.intervalId = null;
   }
 
   start(printTimeCallback) {
-    // ... your code goes here
+    this.intervalId = setInterval(() => {
+      this.currentTime+=1;
+      printTimeCallback(this.currentTime);
+    }, 1000);
   }
 
-  getMinutes() {
-    // ... your code goes here
-  }
+  getMinutes() {                                             // should not receive any arguments
+    if (this.currentTime === 0) {                            // no division of 0
+        return 0;
+    }
+    else {
+      let minutesPassed = Math.floor(this.currentTime/60);   // should return the number of entire minutes passed
+      return minutesPassed; 
+    }                                   
+    }
 
   getSeconds() {
-    // ... your code goes here
+    if (this.currentTime === 0) {                            // no division of 0
+      return 0;
+    } 
+    else {
+      return this.currentTime%60;
+    }
   }
 
   computeTwoDigitNumber(value) {
-    // ... your code goes here
+    if (value < 10) {
+      return `0${value.toString()}`;   // should always return a string of length 2
+    }
+    else {
+      return value.toString();
+    }
   }
 
   stop() {
-    // ... your code goes here
+    clearInterval(this.intervalId);
   }
 
   reset() {
-    // ... your code goes here
+    this.currentTime = 0;
   }
 
   split() {
     // ... your code goes here
   }
-}
+
+  }
+  
+
+let chronometer = new Chronometer();
+chronometer.start(function(currentTime) {});
+chronometer.getMinutes();
+chronometer.getSeconds();
+chronometer.computeTwoDigitNumber(8);
+
+
+
+
+
+
+
+
+
+
