@@ -1,6 +1,6 @@
 class Chronometer {
   constructor() {
-    this.currentTime = 0;   
+    this.currentTime = 0;
     this.intervalId = null; //not interval has been estarted yet
   }
 
@@ -14,7 +14,7 @@ class Chronometer {
     }, 1000);
   }
   getMinutes() {
-    const minutes = Math.floor(this.currentTime / 60); 
+    const minutes = Math.floor(this.currentTime / 60);
     return minutes;
   }
 
@@ -29,19 +29,22 @@ class Chronometer {
     const seconds = this.currentTime % 60;
     return seconds;
   }
-  
 
- 
+
+
   computeTwoDigitNumber(value) {
     // const twoDigit = String(value).padStart(2, '0');
     // return twoDigit;
 
     const twoDigit = ('0' + value).slice(-2);
     return twoDigit;
-    }
+  }
 
   stop() {
-    // ... your code goes here
+
+    clearInterval(this.intervalId);
+    this.intervalId = null;
+
   }
 
   reset() {
