@@ -6,12 +6,12 @@ class Chronometer {
 
   start(printTimeCallback) { // the start method printTimeCallback function as an argument
     this.intervalId = setInterval(() => {
-      this.currentTime += 1;
+      this.currentTime += 1; //incremeting 1 every one second
 
       if (printTimeCallback) {
         printTimeCallback(this.currentTime);
       }
-    }, 1000);
+    }, 1000); //here one second
   }
   getMinutes() {
     const minutes = Math.floor(this.currentTime / 60);
@@ -26,7 +26,7 @@ class Chronometer {
       return 0;
     }
 
-    const seconds = this.currentTime % 60;
+    const seconds = this.currentTime % 60; //whatever is left we want to print, whatever is left from the minute
     return seconds;
   }
 
@@ -48,10 +48,14 @@ class Chronometer {
   }
 
   reset() {
-    // ... your code goes here
+    this.currentTime = 0;
   }
 
   split() {
-    // ... your code goes here
+
+    const  minutes = this.computeTwoDigitNumber(this.getMinutes());
+    const  seconds = this.computeTwoDigitNumber(this.seconds());
+
+    return `${minutes}:${seconds}`
   }
 }
