@@ -19,7 +19,7 @@ class Chronometer {
   } 
 
   getSeconds() {
-    return (this.currentTime / 100) % 60;
+    return Math.floor((this.currentTime / 100) % 60);
   }
 
   getCentiseconds() {
@@ -43,9 +43,9 @@ class Chronometer {
   }
 
   split() {
-    const minutes = this.computeTwoDigitNumber(this.getMinutes(this.currentTime));
-    const seconds = this.computeTwoDigitNumber(this.getSeconds(this.currentTime));
-    const centiSec = this.computeTwoDigitNumber(Math.floor(this.getCentiseconds(this.currentTime)));
-    return `${minutes}:${seconds}.${centiSec}`;
+    const minutes = this.computeTwoDigitNumber(this.getMinutes());
+    const seconds = this.computeTwoDigitNumber(this.getSeconds());
+    const centiSec = this.computeTwoDigitNumber(this.getCentiseconds());
+    return `${minutes}:${seconds}.${centiSec}`;  
   }
 }
