@@ -7,8 +7,6 @@ class Chronometer {
   start(printTimeCallback) {
     const timer = setInterval(()=>{
       this.currentTime++;
-        console.log(this.getSeconds());
-
       this.intervalId = timer;
       if(printTimeCallback){
         printTimeCallback()
@@ -27,23 +25,11 @@ class Chronometer {
   }
 
   getSeconds() {
-    const seconds = (this.currentTime % 6000);
-    if(this.currentTime<0){
-      return 0
-    }
-    else{
-      return seconds
-    }
+    return Math.floor((this.currentTime / 100) % 60);
   }
 
   getCentiseconds() {
-    const cs = this.currentTime % 60
-    if(this.currentTime<1){
-      return 0
-    }
-    else{
-      return cs
-    }
+    return (this.currentTime % 100)
   }
 
   computeTwoDigitNumber(value) {
