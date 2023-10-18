@@ -1,9 +1,9 @@
-class Chronometer {
-  constructor() {
+class Chronometer {// should not take any arguments
+  constructor() { 
     // ... your code goes here
   }
 
-  start(printTimeCallback) {
+  start() {
     // ... your code goes here
   }
 
