@@ -40,7 +40,7 @@ class Chronometer {
   }
 
   split() {
-
+    return `${this.computeTwoDigitNumber(this.getMinutes())}:${this.computeTwoDigitNumber(this.getSeconds())}`;
   }
 }
 
