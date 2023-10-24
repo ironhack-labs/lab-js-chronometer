@@ -30,12 +30,7 @@ class Chronometer {
   }
 
   computeTwoDigitNumber(value) {
-    let newValue = value.toString();
-
-    if (newValue < 10) {
-      return newValue.padStart(2, '0');
-    }
-    return newValue;
+    return value.toString().padStart(2, 0);
   }
 
   stop() {
