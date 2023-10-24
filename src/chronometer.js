@@ -23,7 +23,13 @@ class Chronometer {
     
   }
   getSeconds() {
-   
+   if(this.getMinutes() % 60 === 0){
+    return this.currentTime;
+   } else {
+    return this.currentTime;
+   }
+    
+
   }
 
   computeTwoDigitNumber(value) {
