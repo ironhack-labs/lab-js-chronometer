@@ -2,7 +2,7 @@ class Chronometer {
   constructor() {
     this.currentTime = 0;
     this.intervalId = null;
-    this.minutes = 0;
+    
   }
 
   start(printTimeCallback) {
@@ -11,19 +11,19 @@ class Chronometer {
       if(printTimeCallback){
         printTimeCallback();
       }
-      if(this.currentTime % 60 === 0){
-        this.minutes++;
-      }
+  
       
     },1000);
     
   }
 
   getMinutes() {
-    return this.minutes;
+    
+    return Math.floor(this.currentTime / 60);
+    
   }
   getSeconds() {
-    // ... your code goes here
+   
   }
 
   computeTwoDigitNumber(value) {
@@ -43,7 +43,5 @@ class Chronometer {
   }
 }
 
-const chronometer = new 
 
-chronometer();
-chronometer.start();
+
