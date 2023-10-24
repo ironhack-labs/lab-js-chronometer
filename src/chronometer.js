@@ -2,7 +2,7 @@ class Chronometer {
   constructor() {
     this.currentTime = 0;
     this.intervalId = null;
-
+    this.minutes = 0;
   }
 
   start(printTimeCallback) {
@@ -11,15 +11,17 @@ class Chronometer {
       if(printTimeCallback){
         printTimeCallback();
       }
+      if(this.currentTime % 60 === 0){
+        this.minutes++;
+      }
       
     },1000);
     
   }
 
   getMinutes() {
-    // ... your code goes here
+    return this.minutes;
   }
-
   getSeconds() {
     // ... your code goes here
   }
@@ -41,6 +43,7 @@ class Chronometer {
   }
 }
 
-const chronometer = new Chronometer();
+const chronometer = new 
 
 chronometer();
+chronometer.start();
