@@ -33,7 +33,14 @@ class Chronometer {
   }
 
   computeTwoDigitNumber(value) {
-    // ... your code goes here
+   console.log(value)
+    if(value < 10){
+      return '0' + value;
+    } 
+    
+    //return String(value);
+   return value.toString();
+
   }
 
   stop() {
