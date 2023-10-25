@@ -31,13 +31,10 @@ class Chronometer {
 
   computeTwoDigitNumber(value) {
     // ... your code goes here
-    let finalValue;
     if (value < 10) {
-      finalValue = "0" + value;
-    } else {
-      finalValue = String(value);
+      return "0" + value;
     }
-    return finalValue;
+    return String(value);
   }
 
   stop() {
@@ -52,13 +49,12 @@ class Chronometer {
 
   split() {
     // ... your code goes here
-    const theMinutes = String(
-      this.computeTwoDigitNumber(this.getMinutes(this.currentTime))
+    const theMinutes = this.computeTwoDigitNumber(
+      this.getMinutes(this.currentTime)
     );
-    const theSeconds = String(
-      this.computeTwoDigitNumber(this.getSeconds(this.currentTime))
+    const theSeconds = this.computeTwoDigitNumber(
+      this.getSeconds(this.currentTime)
     );
-    console.log(`${theMinutes}:${theSeconds}`);
     return `${theMinutes}:${theSeconds}`;
   }
 }
