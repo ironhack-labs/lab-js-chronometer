@@ -15,7 +15,7 @@ function printTime() {
   printMinutes();
   printSeconds();
   // start to check NOTE => comment this out
-  printCentiseconds();
+  // printCentiseconds(); // Commented out the invocation
   // finish to check NOTE => comment this out
 }
 
