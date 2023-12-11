@@ -51,6 +51,6 @@ class Chronometer {
     // should return a string showing the minutes and seconds in the "mm:ss" format
     let minutes = this.computeTwoDigitNumber(this.getMinutes());
     let seconds = this.computeTwoDigitNumber(this.getSeconds());
-    return minutes.toString() + ":" + seconds.toString();
+    return minutes + ":" + seconds;
   }
 }
