@@ -54,11 +54,12 @@ class Chronometer {
 
   stop() {
     // ... your code goes here
-    clearInterval(this.intervalId);
+    clearInterval(this.currentTime);
   }
 
   reset() {
     // ... your code goes here
+    this.currentTime = 0;
   }
 
   split() {
