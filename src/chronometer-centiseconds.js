@@ -2,6 +2,7 @@ class Chronometer {
   constructor() {
     this.currentTime=0
     this.intervalId=null
+    
   }
 
   start(printTimeCallback) {
@@ -9,7 +10,8 @@ class Chronometer {
       if (printTimeCallback) {
         printTimeCallback(this.currentTime);
       }
-      this.currentTime += 1; // Increment time after callback
+      this.currentTime += 1; 
+      // Increment time after callback
     }, 10);
   }
 
@@ -18,9 +20,8 @@ class Chronometer {
   }
 
   getSeconds() {
-    
-   
-    return Math.floor(this.currentTime/100)
+     
+    return Math.floor(this.currentTime/100)%60
 
   }
 
@@ -28,11 +29,7 @@ class Chronometer {
     if (this.currentTime<=0) {
       return 0
     }
-    if (this.currentTime <= 100) {
-      
-      return  Math.floor(this.currentTime % 100)   
-    }
-
+  
     return  Math.floor(this.currentTime % 100)
 
   }
@@ -59,7 +56,7 @@ class Chronometer {
     let min = this.computeTwoDigitNumber(this.getMinutes())
     let seconds = this.computeTwoDigitNumber(this.getSeconds())
     let centiseconds= this.computeTwoDigitNumber(this.getCentiseconds())
-    let resul = `${min}:${seconds}:${centiseconds}` 
+    let resul = `${min}:${seconds}.${centiseconds}` 
     return resul
   }
 }
