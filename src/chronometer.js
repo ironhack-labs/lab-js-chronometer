@@ -18,8 +18,10 @@ class Chronometer {
   }
 
   getSeconds() {
-    return this.currentTime % 60;
+
   }
+
+  getCentisecond() 
 
   computeTwoDigitNumber(value) {
     const string = "00";
