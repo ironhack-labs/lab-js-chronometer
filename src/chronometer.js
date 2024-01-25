@@ -28,20 +28,22 @@ class Chronometer {
 
   computeTwoDigitNumber(value) {
     // ... your code goes here
-    let twoDigit = String(value).slice(0,2);
-    console.log('slice ',twoDigit)
+    let twoDigit = String(value).padStart(2, '0');
     return twoDigit
   }
 
   stop() {
     // ... your code goes here
+    clearInterval(this.intervalId )
   }
 
   reset() {
     // ... your code goes here
+    this.currentTime = 0
   }
 
   split() {
     // ... your code goes here
+    return this.getMinutes()+":"+this.getSeconds()
   }
 }
