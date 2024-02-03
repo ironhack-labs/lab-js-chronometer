@@ -3,6 +3,7 @@ class Chronometer {
     this.currentTime = 0;
     this.intervalId = null;
   }
+  /******************************************** */
 
   start(printTimeCallback) {
     let intervalId = setInterval(() => {
@@ -12,12 +13,13 @@ class Chronometer {
     }, 1000);
   }
 
+  /******************************************** */
   getMinutes() {
-    // ... your code goes here
+    return Math.floor(this.currentTime / 60);
   }
 
   getSeconds() {
-    // ... your code goes here
+    return this.currentTime % 60;
   }
 
   computeTwoDigitNumber(value) {
