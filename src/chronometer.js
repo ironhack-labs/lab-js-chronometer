@@ -3,17 +3,17 @@ class Chronometer {
     this.currentTime = 0;
     this.intervalId = null;
   }
-  /******************************************** */
 
   start(printTimeCallback) {
-    let intervalId = setInterval(() => {
+    let intervalId = (() => {
       this.currentTime++;
+      if (printTimeCallback) {
+        printTimeCallback();
+      }
       console.log(this.currentTime);
-      printTimeCallback();
-    }, 1000);
+    });
+    this.intervalId = setInterval(intervalId, 1000);
   }
-
-  /******************************************** */
   getMinutes() {
     return Math.floor(this.currentTime / 60);
   }
@@ -23,19 +23,17 @@ class Chronometer {
   }
 
   computeTwoDigitNumber(value) {
-    if (value < 10){
-      return `0${value}`;
-    } else {
-      return `${value}`;
-    }
+    return value < 10 ? `0${value}` : `${value}`;
   }
 
   stop() {
-    // ... your code goes here
+    console.log(this.intervalId);
+    clearInterval(this.intervalId);
+    console.log(this.intervalId);
   }
 
   reset() {
-    // ... your code goes here
+    this.currentTime = 0;
   }
 
   split() {
@@ -48,3 +46,7 @@ hey = () => {
   console.log("heeeeey");
 };
 console.log(chronometer.start(hey));
+
+//let chrono2 = new Chronometer();
+//chrono2.start(hey);
+console.log(chronometer.stop());
