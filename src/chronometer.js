@@ -40,13 +40,3 @@ class Chronometer {
    return `${this.computeTwoDigitNumber(this.getMinutes())}:${this.computeTwoDigitNumber(this.getSeconds())}`;
   }
 }
-
-let chronometer = new Chronometer();
-hey = () => {
-  console.log("heeeeey");
-};
-console.log(chronometer.start(hey));
-
-//let chrono2 = new Chronometer();
-//chrono2.start(hey);
-console.log(chronometer.stop());
