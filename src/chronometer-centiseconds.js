@@ -53,3 +53,45 @@ class Chronometer {
     )}:${this.computeTwoDigitNumber(this.getSeconds())}.${this.computeTwoDigitNumber(this.getCentiseconds())}`;
   }
 }
+
+let chronometer = new Chronometer();
+// hey = () => {
+//   console.log("heeeeey");
+// };
+// console.log(chronometer.start(hey));
+
+let chrono2 = new Chronometer();
+chrono2.currentTime = 5021000;
+console.log(chrono2.getMinutes());
+
+chrono2.currentTime = 1500;
+console.log("should be 15: ");
+console.log(chrono2.getSeconds());
+
+chrono2.currentTime = 11500;
+console.log("Should be 55: ");
+console.log(chrono2.getSeconds());
+
+chrono2.currentTime = 6122;
+console.log("Should be 22: ");
+console.log(chrono2.getCentiseconds());
+
+chrono2.currentTime = 7555;
+console.log("Should be 55: ");
+console.log(chrono2.getCentiseconds());
+
+chrono2.currentTime = 510;
+console.log("Should be exactly 00:05.10 aaaand")
+console.log(chrono2.split());
+
+chrono2.currentTime = 1725;
+console.log("Should be exactly 00:17.25 aaaand")
+console.log(chrono2.split());
+
+
+
+/*    it('should return valid format with minutes, seconds and centiseconds  "mm:ss.SS"', () => {
+      chronometer.currentTime = 510;
+      expect(chronometer.split()).toEqual(`00:05.10`);
+      chronometer.currentTime = 1725;
+      expect(chronometer.split()).toEqual(`00:17.25`);*/
