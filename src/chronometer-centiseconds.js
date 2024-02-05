@@ -24,11 +24,13 @@ class Chronometer {
     if (totalSeconds >= 60) {
       return totalSeconds % 60;
     } else {
-      return totalSeconds;
+      return parseInt(totalSeconds);
     }
   }
   getCentiseconds() {
-    return this.currentTime % 1500;
+    let seconds = this.currentTime / 100;
+    seconds = seconds - Math.floor(seconds);
+    return  parseInt(seconds.toFixed(2) * 100);
   }
 
   computeTwoDigitNumber(value) {
@@ -48,24 +50,6 @@ class Chronometer {
   split() {
     return `${this.computeTwoDigitNumber(
       this.getMinutes()
-    )}:${this.computeTwoDigitNumber(this.getSeconds())}`;
+    )}:${this.computeTwoDigitNumber(this.getSeconds())}.${this.computeTwoDigitNumber(this.getCentiseconds())}`;
   }
 }
-
-let chronometer = new Chronometer();
-hey = () => {
-  console.log("heeeeey");
-};
-console.log(chronometer.start(hey));
-
-let chrono2 = new Chronometer();
-chrono2.currentTime = 5021000;
-console.log(chrono2.getMinutes());
-
-chrono2.currentTime = 1500;
-console.log("should be 15: ");
-console.log(chrono2.getSeconds());
-
-chrono2.currentTime = 11500;
-console.log("Should be 55: ");
-console.log(chrono2.getSeconds());
