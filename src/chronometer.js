@@ -53,6 +53,6 @@ class Chronometer {
   }
 
   split() {
-    // ... your code goes here
+    return (`${computeTwoDigitNumber(getMinutes())}:${computeTwoDigitNumber(getSeconds())}`)
   }
 }
