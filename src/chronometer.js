@@ -53,6 +53,6 @@ class Chronometer {
   }
 
   split() {
-    return (`${computeTwoDigitNumber(getMinutes())}:${computeTwoDigitNumber(getSeconds())}`)
+    return `${this.computeTwoDigitNumber(this.getMinutes())}:${this.computeTwoDigitNumber(this.getSeconds())}`
   }
 }
