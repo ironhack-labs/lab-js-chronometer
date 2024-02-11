@@ -50,7 +50,7 @@ class Chronometer {
   }
 
   split() {
-    let timeSplit = this.computeTwoDigitNumber(this.getMinutes()).toLowerCase() + ":" + this.computeTwoDigitNumber(this.getSeconds()).toLowerCase() + "." + this.computeTwoDigitNumber(this.getCentiseconds()).toUpperCase();
+    let timeSplit = this.computeTwoDigitNumber(this.getMinutes()) + ":" + this.computeTwoDigitNumber(this.getSeconds()) + "." + this.computeTwoDigitNumber(this.getCentiseconds());
     return timeSplit;
   }
 }
