@@ -106,9 +106,11 @@ body {
   left: 10px;
 }
 
-.btn.reset,
-.btn.split {
+.btn.reset{
   right: 10px;
+}
+.btn.split{
+  left: 39%;
 }
 
 .btn.start { background: #5fca5f; }
