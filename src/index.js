@@ -18,18 +18,15 @@ function printTime() {
 }
 
 function printMinutes() {
-  minUni.innerHTML = chronometer.computeTwoDigitNumber(chronometer.getMinutes())[1];
-  minDec.innerHTML = chronometer.computeTwoDigitNumber(chronometer.getMinutes())[0];
+  minDec.innerHTML = chronometer.computeTwoDigitNumber(chronometer.getMinutes());
 }
 
 function printSeconds() {
-  secUni.innerHTML = chronometer.computeTwoDigitNumber(chronometer.getSeconds())[1];
-  secDec.innerHTML = chronometer.computeTwoDigitNumber(chronometer.getSeconds())[0];
+  secDec.innerHTML = chronometer.computeTwoDigitNumber(chronometer.getSeconds());
 }
 
 function printCentiseconds() {
-  centisecUni.innerHTML = chronometer.computeTwoDigitNumber(chronometer.getCentiseconds())[1];
-  centisecDec.innerHTML = chronometer.computeTwoDigitNumber(chronometer.getCentiseconds())[0];
+  centisecDec.innerHTML = chronometer.computeTwoDigitNumber(chronometer.getCentiSeconds());
 }
 
 function printSplit() {

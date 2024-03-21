@@ -32,6 +32,11 @@ body {
   position: relative;
   text-align: center;
   width: 220px;
+  display:flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 #splits-container {
@@ -50,6 +55,7 @@ body {
   font-size: 36px;
   margin-top: -15px;
   position: absolute;
+  margin-bottom: 12%;
   right: 20px;
 }
 
@@ -86,7 +92,6 @@ body {
 
 .number {
   display: inline-block;
-  width: 40px;
 }
 
 .btn {
