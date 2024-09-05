@@ -137,7 +137,7 @@ You should use the `setInterval` method to achieve this. The *interval id* that 
 Additionally, the `start` method should accept a *callback function* as an argument. Let's name it `printTimeCallback`. Once `start` is invoked, the said `printTimeCallback` function should be executed in 1-second intervals, meaning inside the `setInterval`.
 If `printTimeCallback` is not passed, it should be disregarded (hint: you should check whether the callback was passed before attempting to run it).
 
-:bulb: _Hint 1_: Keep in mind, if you pass a function declaration to the `setInterval()` method (by writing `setInterval(function () {/* */})`), the keyword `this` will not refer to the object _chronometer_, but to the global scope. To enable referencing the chronometer by accessing `this`, pass a function expression (a so-called arrow function) to the `setInterval()` method (by writing `setInterval(() => {/* */})` instead).
+💡_Hint 1_: Keep in mind, if you pass a function declaration to the `setInterval()` method (by writing `setInterval(function () {/* */})`), the keyword `this` will not refer to the object _chronometer_, but to the global scope. To enable referencing the chronometer by accessing `this`, pass a function expression (a so-called arrow function) to the `setInterval()` method (by writing `setInterval(() => {/* */})` instead).
 
 <br>
 
@@ -189,7 +189,7 @@ The `computeTwoDigitNumber` method should take a `value` argument, a number, and
 
 For example, if `computeTwoDigitNumber` is called with the number `7`, it should return a string `"07"`. If called with the number `36`, it should return a string with the value of `"36"`.
 
-:bulb: _Hint_: You can achieve this dynamically by using the `.slice()` method.
+💡_Hint_: You can achieve this dynamically by using the `.slice()` method.
 
 We'll use the `computeTwoDigitNumber` method in the following iterations to format the values before displaying them on the *stopwatch*.
 
