@@ -40,14 +40,14 @@ describe('Chronometer class', () => {
     it('should increment by 1 the currentTime property on every 0.01 second (10 milliseconds) interval', () => {
       chronometer.start();
       jasmine.clock().tick(1000);
-      expect(chronometer.currentTime).toEqual(100);
+      expect(chronometer.currentTime).toEqual(1);
     });
 
-    it('should invoke the passed argument (printTimeCallback) 100 times per second', () => {
+    it('should invoke the passed argument (printTimeCallback) every 1 second', () => {
       const printTimeCallback = jasmine.createSpy('printTimeCallback');
       chronometer.start(printTimeCallback);
-      jasmine.clock().tick(1000);
-      expect(printTimeCallback).toHaveBeenCalledTimes(100);
+      jasmine.clock().tick(2000);
+      expect(printTimeCallback).toHaveBeenCalledTimes(2);
     });
 
     it('should increment the currentTime property to 200 after 2 seconds', () => {
@@ -77,7 +77,7 @@ describe('Chronometer class', () => {
     });
 
     it('should return the number of entire minutes passed', () => {
-      chronometer.currentTime = 6500;
+      chronometer.currentTime = 65;
       expect(chronometer.getMinutes()).toEqual(1);
     });
 
@@ -86,7 +86,7 @@ describe('Chronometer class', () => {
     });
 
     it('should return the number of minutes passed even after a very long time', () => {
-      chronometer.currentTime = 5021000;
+      chronometer.currentTime = 50210;
       expect(chronometer.getMinutes()).toEqual(836);
     });
   });
