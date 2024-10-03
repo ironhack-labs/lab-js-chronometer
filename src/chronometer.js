@@ -27,18 +27,24 @@ class Chronometer {
   }
 
   computeTwoDigitNumber(value) {
-      
+        return ("0" + value).slice(-2);
+    
+  
   }
-
   stop() {
-    // ... your code goes here
+    clearInterval(this.intervalId)
   }
 
   reset() {
-    // ... your code goes here
+    this.currentTime = 0;
   }
 
   split() {
-    // ... your code goes here
+    const minutes = this.getMinutes();
+    const seconds = this.getSeconds();
+    const formattedMinutes = this.computeTwoDigitNumber(minutes);
+    const formattedSeconds = this.computeTwoDigitNumber(seconds);
+    return `${formattedMinutes}:${formattedSeconds}`;
+
   }
 }
