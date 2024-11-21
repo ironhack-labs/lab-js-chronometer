@@ -28,13 +28,21 @@ function printSeconds() {
 }
 
 function printCentiseconds() {
-  centisecUni.innerHTML = chronometer.computeTwoDigitNumber(chronometer.getCentiseconds())[1];
-  centisecDec.innerHTML = chronometer.computeTwoDigitNumber(chronometer.getCentiseconds())[0];
+   centisecUni.innerHTML = chronometer.computeTwoDigitNumber(chronometer.getCentiseconds())[1];
+   centisecDec.innerHTML = chronometer.computeTwoDigitNumber(chronometer.getCentiseconds())[0];
 }
 
 function printSplit() {
   let li = document.createElement('li');
-  li.innerHTML = chronometer.split();
+  
+  let displayMinutes, displaySeconds, displayCentiSecs;
+
+  displayMinutes = chronometer.computeTwoDigitNumber(chronometer.getMinutes())[0] + chronometer.computeTwoDigitNumber(chronometer.getMinutes())[1];
+  displaySeconds = chronometer.computeTwoDigitNumber(chronometer.getSeconds())[0] + chronometer.computeTwoDigitNumber(chronometer.getSeconds())[1];
+  displayCentiSecs = chronometer.computeTwoDigitNumber(chronometer.getCentiseconds())[0] + chronometer.computeTwoDigitNumber(chronometer.getSeconds())[1];
+  
+  li.innerHTML = displayMinutes + ":" + displaySeconds + ":" + displayCentiSecs;
+
   splits.appendChild(li);
 }
 
@@ -79,6 +87,7 @@ btnLeft.addEventListener('click', () => {
 btnRight.addEventListener('click', () => {
   if (btnRight.classList.contains('reset')) {
     chronometer.reset();
+
     clearSplits();
     printTime();
   } else {
